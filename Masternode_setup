@@ -1,0 +1,170 @@
+A MUE guide for setting up and hosting a masternode on a Digital Ocean droplet.
+
+The MUE network has switched to a Dash-X11 code base, and as such it inherits the strengths that a 2-tier network brings, in terms of a strong masternode network for additional functions and security of the network.
+
+The masternodes perform tasks for the MUE network. These are for instance InstantSend, PrivateSend, storage of the blockchain and governance capabilities. As a reward for running these functions, the masternodes are paid out a part of the block reward for their services. The block reward is 40 MUE per block and each block occurs on average every 40 seconds, thus growing the supply 1 MUE every second.
+
+The block reward is split in three providing 45% to the miner who solved the block, 45% to the masternode for it’s services and the remaining 10% going to the continuous funding of the MUE project. The masternode reward is 45%*40 MUE = 18 MUE per block.
+
+How to setup a Virtual Private Server (VPS) and run a MUE masternode.
+
+For starters, the reason for running a dedicated VPS instead of hosting one’s masternode on a home internet connection are several. The masternode must be up and running all the time to provide services for the network. Should the connection go down, or the node performs badly, the rest of the network will be unhappy with the services and the masternode loses payments. Many home internet providers are unhappy if the owner runs a server at home and may shut down access to the masternode.
+
+A typical masternode uses around 500 GB or more of traffic per month. Home internet users with traffic caps will have a hard time running a masternode if the bandwidth is limited. It is especially important to have a high speed connection as the masternode is serving up the blockchain. Additional feature to the network will likely require a high speed connection as well.
+
+VPS requirements for a masternode
+
+The minimal requirements for running a masternode are:
+1 GB of ram, 1 CPU core, 20 GB of harddrive space and a high speed internet connection and at least a transfer of 500 GB per month. Better hardware can be used to help the masternode performance, but using less than the required minimal hardware can make the masternode unstable and cause the node to crash or perform poorly. By doing so, the node can get kicked off the masternode lists, causing the masternode to lose payments.
+
+
+Setting up a local wallet for cold storage and a hot wallet (masternode) on a VPS
+
+Install wallet on local machine
+Open up the client and let it sync to the network wait for the blockchain to be downloaded. If other nodes cannot be found open up the console and use the command addnode nodes.muex.io add
+
+Login to VPS wget wallet unpack
+check the executables and configuration files:
+
+cd .muecore
+chmod 755 ./mued
+chmod 755 ./mue-cli
+nano -w mue.conf
+<code>
+#----
+rpcuser=XXXXXXXXXXXXX
+rpcpassword=XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+rpcallowip=127.0.0.1
+#----
+listen=1
+server=1
+daemon=1
+maxconnections=24
+#--------------------
+masternode=1
+masternodeprivkey=XXXXXXXXXXXXXXXXXXXXXXX
+externalip=XXX.XXX.XXX.XXX
+</code>
+
+In the window, replace all XXXes with your personalized information. rpcuser and rpcpassword can be anything (password longer than username), masternode privkey, and your VPS IP address.
+
+Save and exit the edited file by pressing ctrl w followed by ctrl x.
+
+Start the mue daemon:
+./mued
+
+
+Let the blockchain sync on your remote VPS while you move on to installing Sentinel. (Guide for this based on @moocowmoo's version)
+
+Install sentinel agent on masternode
+
+step 1) install prerequisites
+
+sudo apt-get update
+sudo apt-get install -y git python-virtualenv
+
+step 2) If you are not already there, navigate to your .dashcore folder
+
+cd .muecore
+
+step 2) clone sentinel, cd to sentinel directory
+
+git clone https://github.com/dashpay/sentinel.git
+cd sentinel
+
+step 3) create virtual python environment
+
+virtualenv venv
+
+(if this command fails try installing this package
+
+sudo apt-get install -y virtualenv
+
+step 4) install sentinel dependencies
+
+venv/bin/pip install -r requirements.txt
+
+step 5) test sentinel is alive and talking to the still sync'ing wallet
+
+venv/bin/python bin/sentinel.py
+
+You should see: "mued not synced with network! Awaiting full sync before running Sentinel."
+This is exactly what we want to see at this stage
+
+step 6) wait until the reindex has complete and the wallet has synced
+
+cd .. (you should now be back in .muecore)
+./mue-cli mnsync status
+
+This is what you're waiting to see:
+
+AssetId 999, all trues, one false, and a FINISHED. Keep issuing 
+./mue-cli mnsync status until it looks like this:
+
+{
+"AssetID": 999,
+"AssetName": "MASTERNODE_SYNC_FINISHED",
+"Attempt": 0,
+"IsBlockchainSynced": true,
+"IsMasternodeListSynced": true,
+"IsWinnersListSynced": true,
+"IsSynced": true,
+"IsFailed": false
+}
+
+step 7) start your masternode
+
+At this point, your remote masternode is synchronized and chatting with the network
+but is not accepted as a masternode because it hasn't been introduced to the network
+by your collateral. 
+
+Go back to your local wallet, open the debug console, and run these commands:
+
+walletpassphrase <YOURPASSPHRASE> 120
+masternode start-alias <MNALIAS>
+
+to start your masternode.
+
+
+step 8) test sentinel has nothing to say
+
+You're needed back in Sentinel directory! 
+
+cd sentinel
+
+At this point, running
+
+venv/bin/python bin/sentinel.py
+
+should return nothing but silence. This is how you know it's working.
+
+step 9) create a crontab entry to wake sentinel every five minutes
+
+crontab -e
+
+Choose nano as your editor. Add this line to the end of the file.
+
+* * * * * cd /home/YOURUSERNAME/.muecore/sentinel && ./venv/bin/python bin/sentinel.py 2>&1 >> sentinel-cron.log
+
+
+Make sure you:
+1) Change USERNAME to your username.
+2) Hit enter to create another line at the end after this line, or the file will not work.
+
+Press ctrl w to save and ctrl x exit.
+
+step 10) check for start, try, try, again
+
+cd /home/USERNAME/.muecore
+
+./mue-cli masternode debug
+
+Look for a success message. If you see one, you are done!
+
+Because the network is in transition, you may have to re-send your masternode start.
+
+to do it a second time, repeat step 7.
+
+step 11) partytime!
+
+Congratulations, your masternode is running!
