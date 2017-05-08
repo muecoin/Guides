@@ -71,6 +71,36 @@ Install the client and open putty.exe, if needed allow it through the Windows fi
 Provide the ip-number, keep the port on 22, and save the configuration with a suitable name. This allows for easier access next time you want to log on your droplet.
 Click connect and a block window will open up, promting you for your login and password. "root" is the login and the password is in your email from Digital Ocean.
 
+
+Once logged in, it is smart to change the root password to something more secure. Remeber that the email with hte root passowrd was sent in plain text, better change that and secure your VPS!
+Type the command: passwd
+and then provide a new password twice to change the password for user root.
+
+We need a new common user to run the masternode. Running as root is in itself a security risk and is not encouraged. Here we are adding the user "mue", but you may choose whatever username you like.
+type the following commands:
+adduser mue
+passwd mue
+
+this adds the user "mue" and we setup the users password.
+next add the user to the sudo group:
+usermod -aG sudo mue
+
+Now, we have a normal user ythat can do some administrative tasks on the system.
+
+Lets switch ot the new user "mue" nad proceed with the installation:
+su - mue
+
+Next, download the Linux client, and unpack the compressed files:
+wget https://www.monetaryunit.org/downloads/linux64-1.0.0.1.tar.gz
+tar -zxvf linux64-1.0.0.1.tar.gz
+
+
+cd linux64-1.0.0.1
+
+copy bins to /home/bin ? setup this in the users path: export PATH=$PATH:$HOME/bin
+
+use the tool "wget" to fetch the linux client.
+
 Login to VPS wget wallet unpack
 check the executables and configuration files:
 
