@@ -29,7 +29,10 @@ Download the Windows client, monetaryunit-1.0.10.8-win64-setup.exe. You may chec
 Install the client, and then start it.
 You may be promted by the Windows Firewall to allow the wallet to accept connections on privat an dopen networks. Please select both network boxes and accept. Now, with the client open, let it sync to the network wait for the blockchain to be downloaded. The wallet will attempt to synchronize with the network, no manual actions should be needed at this point.
 
-Lock wallet with a strong password, warning, remember password or all funds will be lost.
+Protect your funds with a strong password.
+In your wallet, go to "Settings" and then "Encrypt Wallet"
+Provide a strong password to secure your funds. Please make sure to remeber this password or write it down and keep it in a bank safe deposit. If you lose your wallet password, there is no means of recovering your funds!
+
 
 
 
