@@ -50,10 +50,22 @@ Next, make a transaction of exactly 500 000 MUE to the adddress you just generat
 Go to the "Send" tab of your wallet and paste in the MUE address to recieve the collateral funds.
 Uncheck the box with "Subtract fee from amount" and ensure that the sending amount is exactly 500 000 MUE.
 
-Please tripple check that the address is correct, and that the sending amount is 500 000 MUE. If you by mistake send your funds to a wrong address, THEY WILL BE GONE.
+Please tripple check that the address is correct, and that the sending amount is 500 000 MUE. If you by mistake send your funds to the wrong address, THEY WILL BE GONE!
 
+After checking everything, send your funds to the address above and wait for the transaction to confirm. Press "send" and write your wallet password to make the transaction.
+Check the "Transactions" tab, and there should be a transaction listed as "Payment to yourself" if you sent the funds from the wallet. Otherwise sending from an exchange will list that transaction address instead.
 
+While waiting, let's start working on the VPS (Virtual Private Server) hot node.
+This guide will use Digital Ocean as a VPS provider, but the reader is free to chose whomever they like. The auther has used them for years as a masternode host and they are very reliable. There are definatly cheaper providers, but something to consider is that the masternode needs to be up and running 24/7 for supporting the network. Running a masternode on a cheaper, less reliable host will likely give more downtime and less payments in the longer run.
 
+This promotion code https://m.do.co/c/0c50700df3bf gives every new user a $10 value to start using a new VPS. Please freel free to use it if you like.
+Sign up for a new account, log in and click "New Droplet"
+For this guide we are looking to start a 16.04 Ubuntu version of Linux as the host:
+Select the 1 GB / 1 CPU, 30 GB SSD Disk, 2 TB Transfer version. The $10 USD credit provided via the promotional code will give most of the first month hosting for free!
+
+Create the droplet, and the root login, ip and password will be sent to your email address. These details are needed to access your VPS instance.
+
+To access a Linux VPS, you need a program called Putty, http://www.putty.org/ it is a client to securely connect remotly to the VPS host.
 
 Login to VPS wget wallet unpack
 check the executables and configuration files:
