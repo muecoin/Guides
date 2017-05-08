@@ -61,11 +61,15 @@ This guide will use Digital Ocean as a VPS provider, but the reader is free to c
 This promotion code https://m.do.co/c/0c50700df3bf gives every new user a $10 value to start using a new VPS. Please freel free to use it if you like.
 Sign up for a new account, log in and click "New Droplet"
 For this guide we are looking to start a 16.04 Ubuntu version of Linux as the host:
-Select the 1 GB / 1 CPU, 30 GB SSD Disk, 2 TB Transfer version. The $10 USD credit provided via the promotional code will give most of the first month hosting for free!
+Select the 1 GB / 1 CPU, 30 GB SSD Disk, 2 TB Transfer version. The $10 USD credit provided via the promotional code will give most of the first month hosting for free! Chose a location, it doesn't really matter, but it might be better to chose a location closer to yourself for the remote management.
 
 Create the droplet, and the root login, ip and password will be sent to your email address. These details are needed to access your VPS instance.
 
 To access a Linux VPS, you need a program called Putty, http://www.putty.org/ it is a client to securely connect remotly to the VPS host.
+
+Install the client and open putty.exe, if needed allow it through the Windows firewall and access your new droplet.
+Provide the ip-number, keep the port on 22, and save the configuration with a suitable name. This allows for easier access next time you want to log on your droplet.
+Click connect and a block window will open up, promting you for you rlogin and password. "root" is the login and the password is in your email from Digital Ocean.
 
 Login to VPS wget wallet unpack
 check the executables and configuration files:
