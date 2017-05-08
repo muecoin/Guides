@@ -29,6 +29,12 @@ Download the Windows client, monetaryunit-1.0.10.8-win64-setup.exe. You may chec
 Install the client, and then start it.
 You may be promted by the Windows Firewall to allow the wallet to accept connections on privat an dopen networks. Please select both network boxes and accept. Now, with the client open, let it sync to the network wait for the blockchain to be downloaded. The wallet will attempt to synchronize with the network, no manual actions should be needed at this point.
 
+Lock wallet with a strong password, warning, remember password or all funds will be lost.
+
+
+
+
+
 Login to VPS wget wallet unpack
 check the executables and configuration files:
 
