@@ -20,8 +20,14 @@ The minimal requirements for running a masternode are:
 
 Setting up a local wallet for cold storage and a hot wallet (masternode) on a VPS
 
+Let's start by getting thew wallet for your platform.
+Please go the website: htps://monetaryunit.org/download/ and select the wallet that matches your computer. For this tutorial wwe will be using a 64-bit Windows machine for the cold storage wallet and a Linux VPS for the hot masternode daemon.
+
 Install wallet on local machine
-Open up the client and let it sync to the network wait for the blockchain to be downloaded. If other nodes cannot be found open up the console and use the command addnode nodes.muex.io add
+Download the Windows client, monetaryunit-1.0.10.8-win64-setup.exe. You may check the files with the provided checksums, verify that the files downloaded correctly, and if they are different, please redownload the client again.
+
+Install the client, and then start it.
+You may be promted by the Windows Firewall to allow the wallet to accept connections on privat an dopen networks. Please select both network boxes and accept. Now, with the client open, let it sync to the network wait for the blockchain to be downloaded. The wallet will attempt to synchronize with the network, no manual actions should be needed at this point.
 
 Login to VPS wget wallet unpack
 check the executables and configuration files:
