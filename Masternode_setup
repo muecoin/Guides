@@ -58,7 +58,7 @@ Check the "Transactions" tab, and there should be a transaction listed as "Payme
 While waiting, let's start working on the VPS (Virtual Private Server) hot node.
 This guide will use Digital Ocean as a VPS provider, but the reader is free to chose whomever they like. The auther has used them for years as a masternode host and they are very reliable. There are definatly cheaper providers, but something to consider is that the masternode needs to be up and running 24/7 for supporting the network. Running a masternode on a cheaper, less reliable host will likely give more downtime and less payments in the longer run.
 
-This promotion code https://m.do.co/c/0c50700df3bf gives every new user a $10 value to start using a new VPS. Please freel free to use it if you like.
+This promotion&referral code https://m.do.co/c/0c50700df3bf gives every new user a $10 value to start using a new VPS. Please freel free to use it if you like.
 Sign up for a new account, log in and click "New Droplet"
 For this guide we are looking to start a 16.04 Ubuntu version of Linux as the host:
 Select the 1 GB / 1 CPU, 30 GB SSD Disk, 2 TB Transfer version. The $10 USD credit provided via the promotional code will give most of the first month hosting for free! Chose a location, it doesn't really matter, but it might be better to chose a location closer to yourself for the remote management.
@@ -69,7 +69,7 @@ To access a Linux VPS, you need a program called Putty, http://www.putty.org/ it
 
 Install the client and open putty.exe, if needed allow it through the Windows firewall and access your new droplet.
 Provide the ip-number, keep the port on 22, and save the configuration with a suitable name. This allows for easier access next time you want to log on your droplet.
-Click connect and a block window will open up, promting you for you rlogin and password. "root" is the login and the password is in your email from Digital Ocean.
+Click connect and a block window will open up, promting you for your login and password. "root" is the login and the password is in your email from Digital Ocean.
 
 Login to VPS wget wallet unpack
 check the executables and configuration files:
