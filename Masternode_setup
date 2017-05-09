@@ -87,7 +87,7 @@ usermod -aG sudo mue
 
 Now, we have a normal user that can do some administrative tasks on the system.
 
-Lets switch ot the new user "mue" and proceed with the installation:
+Lets switch to the new user "mue" and proceed with the installation:
 su - mue
 
 Just for good meassures, make sure the user mue is in the right directory:
@@ -99,25 +99,28 @@ tar -zxvf linux64-1.0.0.1.tar.gz
 
 We need to copy the binaries to a local folder
 mkdir /home/mue/bin
+mkdir /home/mue/.muecore
 cp /home/mue/linux64-1.0.0.1/bin/64/mue* /home/mue/bin/
 
 and we will make sure they are executable
 chmod 755 /home/mue/bin/mue*
 
+We'll make sure that the binaries are found in the mue users path:
+export PATH=$PATH:$HOME/bin
 
-copy bins to /home/bin ? setup this in the users path: export PATH=$PATH:$HOME/bin
+this setting will not take place untill the user mue has logged in again.
+Before proceeding it is best to log off, and log in to the VPS again. This time though, we can log in as user "mue" with that users password that was setup ealier.
 
-use the tool "wget" to fetch the linux client.
+Open putty again, and connect to your VPS. When prompted log in as user "mue"
 
-Login to VPS wget wallet unpack
-check the executables and configuration files:
+Next step is to setup the configuration files for the MUE daemon (client)
+Use the editor nano to edit the files. More experienced users may use other editors, but nano is an easy to use editor for new beginners and more experienced users alike.
 
 cd .muecore
-chmod 755 ./mued
-chmod 755 ./mue-cli
 nano -w mue.conf
-<code>
-#----
+
+write or copy the settings below to your mue.conf file:
+
 rpcuser=XXXXXXXXXXXXX
 rpcpassword=XXXXXXXXXXXXXXXXXXXXXXXXXXXX
 rpcallowip=127.0.0.1
@@ -125,16 +128,17 @@ rpcallowip=127.0.0.1
 listen=1
 server=1
 daemon=1
-maxconnections=24
+maxconnections=50
 #--------------------
 masternode=1
 masternodeprivkey=XXXXXXXXXXXXXXXXXXXXXXX
 externalip=XXX.XXX.XXX.XXX
-</code>
 
-In the window, replace all XXXes with your personalized information. rpcuser and rpcpassword can be anything (password longer than username), masternode privkey, and your VPS IP address.
+The rpcuser nad password can be anything you like, just put in some long random strings of text.
+The masternodeprivkey is the long key we obtained earlier on the Windows wallet after the "masternode genkey" command.
+The externalip is the ipnumber of the masternode VPS.
 
-Save and exit the edited file by pressing ctrl w followed by ctrl x.
+Save and exit the edited file by pressing "ctrl w" followed by "ctrl x".
 
 Start the mue daemon:
 ./mued
