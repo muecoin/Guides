@@ -38,10 +38,11 @@ With the wallet back up and running, it's time to get it ready for the masternod
 Open the console by clicking the "Tools" menu and selcting "Debug console"
 The next command providews us with a private key for the masternode collateral. Please type
 masternode genkey
-and hit enter. The output will look something like this:
+and hit enter. The output will look something like this: 7qm78BkY2LvriqGVTwRoXJWRTZkm9yH79L2FbRTp9NrQaTKRcGZ
 
 Next, we need to make a transaction of exactly 500 000 MUE to an address. This is very important, the transaction must be exaclty 500 000 MUE for the collateral, no more and no less.
 Go to the "Recieve" tab of your wallet and in the Label field write "Masternode Collateral" and keep the two checkboxes "Reuse an existiing recieving address" and "Request InstantSend" unchecked. Click the orange button "Request payment" to get a new address:
+7WszYALmCVMJLN39JngawyVszvwrjYMEub
 
 This is the addtress we will be sendig our collateral to.
 
@@ -165,7 +166,37 @@ chmod 600 /home/mue/.muecore/mue.conf
 Start the mue daemon:
 mued -daemon
 
-The MUE client will start downloading the blockchain, and syncronize to the network. Give it time to sync up, and in the meantime we will continue to install the Sentinel software.
+The MUE client will start downloading the blockchain, and syncronize to the network. Give it time to sync up, and in the meantime we will continue with more configuratin on the cold node (Windows). The masternode.conf on the Windows server must be made with the correct data for controlling the masternode hot node.
+
+Open the Windows MUe client again, and under the menu "Tools" look for the option "Open Masternode Configuration File" near the bottom of the list. Select that option to open up hte configuration file. If prompted, select to open the file in Notepad.
+The syntax of this file is very important, but it is also very straight forward.
+
+The masternode.conf file needs a few values; 
+Format: alias IP:port masternodeprivkey collateral_output_txid collateral_output_index
+the "alias" is a name we assign to ou masternode, like MN1
+"IP:port" are the external ip and node for the hot node on the VPS. The port for MUE mainnet is 29988
+"masternodeprivkey" is the output from the "masternode genkey" command earlier, eg 7qm78BkY2LvriqGVTwRoXJWRTZkm9yH79L2FbRTp9NrQaTKRcGZ
+for the "collateral_output_txid" and "collateral_output_index" we need to issue a command in the cold wallet console.
+
+In the wallet, select "Tools" and "Debug console", and in the console window run the command:
+"masternode outputs"
+the output will look something like this:
+
+masternode outputs
+{
+  "f9a2013b00205098ad8b192d9ac68e7d55e47eb80c860972a404a51bfbc100ac": "1"
+}
+
+which are the two values that we are looking for. The collateral_output_index will be either a "0" or a "1".
+
+Put these values in the masternode.conf all on one single line, save the file and restart the wallet.
+
+MN1 123.45.56.78:29988 7qm78BkY2LvriqGVTwRoXJWRTZkm9yH79L2FbRTp9NrQaTKRcGZ f9a2013b00205098ad8b192d9ac68e7d55e47eb80c860972a404a51bfbc100ac 1
+
+
+
+
+to install the Sentinel software.
 
 Let's start with the required software:
 sudo apt-get update && sudo apt-get install -y git python-virtualenv
