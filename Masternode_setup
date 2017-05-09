@@ -78,7 +78,8 @@ and then provide a new password twice to change the password for user root.
 
 We need a new common user to run the masternode. Running as root is in itself a security risk and is not encouraged. Here we are adding the user "mue", but you may choose whatever username you like.
 type the following commands:
-adduser mue
+
+useradd -d /home/mue -s /bin/bash -m mue
 passwd mue
 
 This adds the user "mue" and we setup the users password.
@@ -122,7 +123,7 @@ apt-get update -y
 apt-get install libdb4.8-dev libdb4.8++-dev -y
 
 cd Mue
-./autogen.sh && ./configure --with-incompatible-bdb && make
+./autogen.sh && ./configure --with-incompatible-bdb --without-miniupnpc && make
 cd src
 cp mued /home/mue/bin/
 cp mue-cli /home/mue/bin/
