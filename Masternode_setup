@@ -158,13 +158,16 @@ The masternodeprivkey is the long key we obtained earlier on the Windows wallet 
 The externalip is the ipnumber of the masternode VPS.
 
 Save and exit the edited file by pressing "ctrl w" followed by "ctrl x".
+We will secure the conf file by changing its permissions:
+
+chmod 600 /home/mue/.muecore/mue.conf
 
 Start the mue daemon:
-./mued
+mued -daemon
 
-The MUE client will start downloading he blockchain, and syncronize to the network. Give it time to sync up, and in the meantime we will continue to install the Sentinel software.
+The MUE client will start downloading the blockchain, and syncronize to the network. Give it time to sync up, and in the meantime we will continue to install the Sentinel software.
+
 Let's start with the required software:
-
 sudo apt-get update && sudo apt-get install -y git python-virtualenv
 
 When the software is installed, we need to step into the .muecore folder to proceed with the installatin of the Sentinel software:
@@ -245,7 +248,7 @@ crontab -e
 
 Choose nano as your editor. Add this line to the end of the file.
 
-* * * * * cd /home/YOURUSERNAME/.muecore/sentinel && ./venv/bin/python bin/sentinel.py 2>&1 >> sentinel-cron.log
+* * * * * cd /home/mue/.muecore/sentinel && ./venv/bin/python bin/sentinel.py 2>&1 >> sentinel-cron.log
 
 
 Make sure you:
