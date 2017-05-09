@@ -72,7 +72,7 @@ Provide the ip-number, keep the port on 22, and save the configuration with a su
 Click connect and a block window will open up, promting you for your login and password. "root" is the login and the password is in your email from Digital Ocean.
 
 
-Once logged in, it is smart to change the root password to something more secure. Remeber that the email with hte root passowrd was sent in plain text, better change that and secure your VPS!
+Once logged in, it is smart to change the root password to something more secure. Remeber that the email with the root passowrd was sent in plain text, better change that and secure your VPS!
 Type the command: passwd
 and then provide a new password twice to change the password for user root.
 
@@ -85,17 +85,25 @@ this adds the user "mue" and we setup the users password.
 next add the user to the sudo group:
 usermod -aG sudo mue
 
-Now, we have a normal user ythat can do some administrative tasks on the system.
+Now, we have a normal user that can do some administrative tasks on the system.
 
-Lets switch ot the new user "mue" nad proceed with the installation:
+Lets switch ot the new user "mue" and proceed with the installation:
 su - mue
+
+Just for good meassures, make sure the user mue is in the right directory:
+cd /home/mue
 
 Next, download the Linux client, and unpack the compressed files:
 wget https://www.monetaryunit.org/downloads/linux64-1.0.0.1.tar.gz
 tar -zxvf linux64-1.0.0.1.tar.gz
 
+We need to copy the binaries to a local folder
+mkdir /home/mue/bin
+cp /home/mue/linux64-1.0.0.1/bin/64/mue* /home/mue/bin/
 
-cd linux64-1.0.0.1
+and we will make sure they are executable
+chmod 755 /home/mue/bin/mue*
+
 
 copy bins to /home/bin ? setup this in the users path: export PATH=$PATH:$HOME/bin
 
