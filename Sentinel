@@ -1,0 +1,31 @@
+to install the Sentinel software.
+
+Let's start with the required software:
+sudo apt-get update && sudo apt-get install -y git python-virtualenv
+
+When the software is installed, we need to step into the .muecore folder to proceed with the installatin of the Sentinel software:
+
+cd /home/mue/.muecore
+git clone https://github.com/muecoin/sentinel.git
+cd sentinel
+
+step 3) create virtual python environment
+
+virtualenv venv
+
+(if this command fails try installing this package
+
+sudo apt-get install -y virtualenv
+
+step 4) install sentinel dependencies
+
+venv/bin/pip install -r requirements.txt
+
+step 5) test sentinel is alive and talking to the still sync'ing wallet
+
+venv/bin/python bin/sentinel.py
+
+You should see: "mued not synced with network! Awaiting full sync before running Sentinel."
+This is exactly what we want to see at this stage
+
+step 6) wait until the reindex has complete and the wallet has synced
