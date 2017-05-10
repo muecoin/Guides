@@ -36,9 +36,11 @@ After providing a strong password, the wallet needs to be restarted to lock and 
 
 With the wallet back up and running, it's time to get it ready for the masternode address.
 Open the console by clicking the "Tools" menu and selcting "Debug console"
-The next command providews us with a private key for the masternode collateral. Please type
+The next command providews us with a key for the masternode collateral. Please type
 masternode genkey
 and hit enter. The output will look something like this: 7qm78BkY2LvriqGVTwRoXJWRTZkm9yH79L2FbRTp9NrQaTKRcGZ
+
+Note: this is not the same as a MUE address private key. This key is used to communicate to the MUE netork that this is a masternode, it cannot be used to move the collateral funds. The key is used to announce the precence of the masternode to the network, or remove the node from the mastrenode list.
 
 Next, we need to make a transaction of exactly 500 000 MUE to an address. This is very important, the transaction must be exaclty 500 000 MUE for the collateral, no more and no less.
 Go to the "Recieve" tab of your wallet and in the Label field write "Masternode Collateral" and keep the two checkboxes "Reuse an existiing recieving address" and "Request InstantSend" unchecked. Click the orange button "Request payment" to get a new address:
