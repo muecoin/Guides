@@ -264,3 +264,54 @@ To                         Action      From
 29988/tcp (v6)             ALLOW       Anywhere (v6)
 
 Excellent, the firewall is all set!
+
+------------------------------------------------------------
+
+Installing the monit service to auto restaret the MUE daemon in case it crashes. Remember that the masternode needs to be up and running 24/7 to provide its services to the MonetaryUnit network. If it goes offline the masterndoe will stop being paid for it's services and lose its place in the payment queue.
+
+Let's install monit:
+sudo apt-get install monit
+
+Create a small file to start the mued
+nano -w /home/mue/start-mued.sh
+
+and add the command below to the file:
+#!/bin/bash
+/bin/su mue -c '/home/mue/bin/mued -daemon 2>&1 >> /home/mue/.muecore/rc.local.log'
+
+save and close nano with "ctrl o" and "ctrl x"
+
+Make the helper file executable:
+chmod 755 /home/mue/start-mued.sh
+
+Edit the file /etc/monit/monitrc
+
+sudo nano /etc/monit/monitrc
+
+Edit the file as follows:
+
+# uncomment these lines
+set httpd port 2812 and
+use address localhost  # only accept connection from localhost
+allow localhost        # allow localhost to connect to the server and
+# add this to bottom - change user to yours
+check process dashd with pidfile /home/user/.dash/dashd.pid
+start program = "/home/user/.dash/start_dashd.sh" with timeout 60 seconds
+stop program = "/bin/su user -c /home/user/.dash/dash-cli stop"
+
+Load the new configuration
+
+sudo monit reload
+
+Enable the watchdog
+
+sudo monit start dashd
+
+That’s it. You only have to do above once.
+You can check monit’s status by typing below:
+
+sudo monit status
+
+It’ll keep your dashd running for you (across reboots too, no need for any crons or scripts) and keep you from fighting with your chosen OS. Monit only runs once a minute, so be patient if you’re waiting for it to do something.
+
+If you need proof it works, once you see your dashd in the ‘sudo monit status‘ output, you can test it by simply stopping your dashd (dash-cli stop) — within 2 minutes it’ll start it back up,
