@@ -294,24 +294,20 @@ Edit the file as follows:
 set httpd port 2812 and
 use address localhost  # only accept connection from localhost
 allow localhost        # allow localhost to connect to the server and
-# add this to bottom - change user to yours
-check process dashd with pidfile /home/user/.dash/dashd.pid
-start program = "/home/user/.dash/start_dashd.sh" with timeout 60 seconds
-stop program = "/bin/su user -c /home/user/.dash/dash-cli stop"
+# add this to bottom - change user to your user and paths
+check process mued with pidfile /home/mue/.muecore/mued.pid
+start program = "/home/mue/start-mued.sh" with timeout 60 seconds
+stop program = "/bin/su mue -c /home/mue/bin/mue-cli stop"
 
-Load the new configuration
-
+Load the new configuration:
 sudo monit reload
 
-Enable the watchdog
-
-sudo monit start dashd
+Enable the monitoring service:
+sudo monit start mued
 
 That’s it. You only have to do above once.
-You can check monit’s status by typing below:
+You can check monit's status with the command:
 
 sudo monit status
 
-It’ll keep your dashd running for you (across reboots too, no need for any crons or scripts) and keep you from fighting with your chosen OS. Monit only runs once a minute, so be patient if you’re waiting for it to do something.
-
-If you need proof it works, once you see your dashd in the ‘sudo monit status‘ output, you can test it by simply stopping your dashd (dash-cli stop) — within 2 minutes it’ll start it back up,
+That's all folks! The monit service will keep your masternode up and running it is crashes for whatever reason. The monit service checks once aminute if the mued process is running, and restarts it, if it is not.
