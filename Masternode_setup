@@ -226,16 +226,41 @@ Finally, click the "Start alias" button, and the masternode will be activated on
 
 We can see the output change in the masternode status fields to "Pre-Enabled" and then "Enabled"
 
+Veryify the status on your hot node with the command:
+mue-cli masternode debug
+Masternode successfully started
 
+Well done!
+Congratulations to successfully getting your masternode up and running!
 
-./mue-cli masternode debug
+---------------------------------------------------------------------------
 
-Look for a success message. If you see one, you are done!
+Additional steps to improve the hot node is to install a service that restarts your masternode in case it crashes, and a firewall to help the ntworking performace and reduce the risk of malicious network activities.
 
-Because the network is in transition, you may have to re-send your masternode start.
+Let's get a simple firewall up and running:
+sudo apt-get install ufw
 
-to do it a second time, repeat step 7.
+After installing, we need to setup some basic firewall rules. If something goes wrong, you can turn off the firewall with the command "sudo ufw disable"
 
-step 11) partytime!
+Please enter the firewall rules as shown below:
 
-Congratulations, your masternode is running!
+sudo ufw allow ssh/tcp
+sudo ufw limit ssh/tcp
+sudo ufw allow 29988/tcp
+sudo ufw logging on
+sudo ufw enable
+
+Verify the firewall setting with:
+sudo ufw status
+
+sudo ufw status
+Status: active
+
+To                         Action      From
+--                         ------      ----
+22/tcp                     LIMIT       Anywhere
+29988/tcp                  ALLOW       Anywhere
+22/tcp (v6)                LIMIT       Anywhere (v6)
+29988/tcp (v6)             ALLOW       Anywhere (v6)
+
+Excellent, the firewall is all set!
