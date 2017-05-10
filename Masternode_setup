@@ -197,46 +197,11 @@ MN1 123.45.56.78:29988 7qm78BkY2LvriqGVTwRoXJWRTZkm9yH79L2FbRTp9NrQaTKRcGZ f9a20
 
 When the cold wallet start sup again, check the masternode tab, and the masternode should be visable in the list of your own masternodes.
 
+Final last commands on the VPS again, and let's check the status of the masternode. 
+mue-cli mnsync status
 
-to install the Sentinel software.
-
-Let's start with the required software:
-sudo apt-get update && sudo apt-get install -y git python-virtualenv
-
-When the software is installed, we need to step into the .muecore folder to proceed with the installatin of the Sentinel software:
-
-cd /home/mue/.muecore
-git clone https://github.com/muecoin/sentinel.git
-cd sentinel
-
-step 3) create virtual python environment
-
-virtualenv venv
-
-(if this command fails try installing this package
-
-sudo apt-get install -y virtualenv
-
-step 4) install sentinel dependencies
-
-venv/bin/pip install -r requirements.txt
-
-step 5) test sentinel is alive and talking to the still sync'ing wallet
-
-venv/bin/python bin/sentinel.py
-
-You should see: "mued not synced with network! Awaiting full sync before running Sentinel."
-This is exactly what we want to see at this stage
-
-step 6) wait until the reindex has complete and the wallet has synced
-
-cd .. (you should now be back in .muecore)
-./mue-cli mnsync status
-
-This is what you're waiting to see:
-
-AssetId 999, all trues, one false, and a FINISHED. Keep issuing 
-./mue-cli mnsync status until it looks like this:
+We need the masternode hot wallet to be synced and up to date before proceeding.
+It will be ready when the output looks like this:
 
 {
 "AssetID": 999,
@@ -248,6 +213,18 @@ AssetId 999, all trues, one false, and a FINISHED. Keep issuing
 "IsSynced": true,
 "IsFailed": false
 }
+
+If the output is different, please wait for the node to finnish syncing, and try the command "mue-cli mnsync status" again
+When the hot node is all synced and ready, the node is communicating to the MonetaryUnit network and waiting for further instructions. The masterndoe is not yet accepted by the other masternodes, we must start it first. 
+
+We need to activate the masternode, so we move back to the cold wallet on Windows.
+Check the masternode tab of the wallet.
+
+If you have more than one mastrenode in the list, check the masternode that you would like to start.
+
+Finally, click the "Start alias" button, and the masternode will be activated on the network.
+
+We can see the output change in the masternode status fiends to "Pre-Enabled" and then "Enabled"
 
 step 7) start your masternode
 
