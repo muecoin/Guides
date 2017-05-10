@@ -1,0 +1,125 @@
+
+Skip to end of metadata
+Created by Holger Schinzel, last modified by Leonidas on Mar 20, 2017 Go to start of metadata
+
+What this Guide Does
+Enables you to host several local masternodes from one wallet and to start all of them from that wallet. This guide assumes you already know how to start a Masternode. If not, head on to Tao's Masternode Guide for Dummies.
+
+This was done with the following environment:
+Local: Windows 8.1 64 bit
+Remote: Ubuntu 14.04 64 bit
+Dash Version: 0.11.1.26
+
+However the instructions and principles should apply to other OSes unless Dash changes its code format.
+
+STEP 1: Consolidate all your Masternode DASH's on one wallet (Adapted from DRKMiner's Guide)
+
+We have two setup options:
+
+a. New wallet setup - creation of new addresses and DASH transfer.
+b. Consolidation - transfer several "old" wallets into one new wallet.
+
+a. New wallet setup
+Create a new address for each Masternode and encrypt the wallet. You do this by opening terminal and following the following instructions.
+Enter the following command: "masternode genkey" and press ENTER.
+
+You will see a long string of numbers and letters.
+
+Please copy/paste this string to the new notepad file on your Desktop. This is the key you will need to verify your Masternode later in the process.
+
+Enter the following command: "getaccountaddress 0" and press ENTER.
+Please note that a normal Dash address is not the same as an address created in this manner!
+IMPORTANT! Please backup the wallet now. Always backup the wallet BEFORE transferring any DASH!
+Transfer 1000 DASH to each newly created address in one transaction.
+b. Consolidation of old wallets setup
+If you encrypted your wallet, you will need to unlock it before you dump the keys from your old addresses. Command: "walletpassphrase <passphrase> <timeout>"
+Get the private keys of all "old" addresses (Hot wallets). Command : "dumpprivkey <your-old-Dash-address-here>"
+Install a new wallet (one address zero DASH).
+If you encrypted your wallet, you will need to unlock it before you import the keys. Command: "walletpassphrase <passphrase> <timeout>"
+Now on the new wallet "importprivkey <my priv key> <label>" be patient might take some time to rescan the blockchain and import all the previous transactions of that address.
+Note: If you are doing multiple imports of private keys, you can use "importprivkey <my priv key> <label> false". The false statement prevents the client from resyncing. Only once you've reached the last key that you wanted to import, then just go ahead with "importprivkey <my priv key> <optional label>" and it will resync with all the imported addresses in one sitting.
+All newly imported address end up in the "Addresses" Tab. Leave the Address field as is!
+Click "OK", that will move the address to the "Receive" Tab.
+After all addresses are imported, encrypt the wallet and create a backup!
+Keep a backup of ALL "old" wallets for security.
+IMPORTANT: In both cases, please create a dash.conf with the details below. Please note that when using masternode.conf, dash.conf no longer needs to specify "masternode=1, masternodeprivkey and ip" anymore as this is all integrated into masternode.conf.
+
+dash.conf only needs to contain:
+Code (Text):
+rpcuser=SomeRandomString
+rpcpassword=EvenLongerRandomString
+rpcallowip=127.0.0.1
+listen=0
+server=1
+daemon=1
+logtimestamps=1
+STEP 2: Create masternode.conf on your local wallet
+
+masternode.conf is where you list all your Masternodes that you want started.
+
+For Windows:
+Browse to %appdata%\Dash This will bring you to the Dash configuration folder.
+Create a new notepad document and name it "masternode.conf"
+Enter in your masternodes in the following format:
+
+ALIAS IP:9999 MASTERNODEPRIVKEY TRANSACTIONHASH INDEX
+
+ALIAS: Any name that you want to call your masternode
+IP: Your masternode IP
+MASTERNODEPRIVKEY: This is the private key that you placed in your remote configuration
+TRANSACTIONHASH: This is the transaction hash for the transaction in which you got your 1000 DASH deposited.
+INDEX: This is the Index of your transaction for that address I'll show you how to get it in a bit.
+
+So how do you get your Transaction Hash and Index?
+
+You can just enter in your masternode address in a Dash Block Explorer such as Dash Explorer and then click on the transaction ID that first put your 1000 DASH in. The transaction ID is what you will be using and you will also see an Index number that corresponds with the 1000 DASH which should be either 1 or 0.
+
+OR alternatively
+
+Open your wallet, head on to Tools > Debug Console
+Type "masternode outputs"
+
+Something similar to this will pop up (colored in this guide for clarity)
+
+"d1197905eaffd2fbfcd35f681adba92b25e32c62de6d0f7a5487926c01a70897" : "0",
+
+The long green string is your TRANSACTIONHASH, and the last purple digit is your INDEX.
+
+Hence in my masternode.conf I would be putting it in this format in one line:
+
+MYMASTERNODE1 123.45.67.89:9999 MASTERNODEPRIVKEY d1197905eaffd2fbfcd35f681adba92b25e32c62de6d0f7a5487926c01a70897 0
+For each additional masternode that you have, put in a corresponding entry in a new line, following the same process as above. Save it.
+
+STEP 3: Starting your Masternodes
+
+Startup your wallet in masternode mode and allow it to sync. Ensure all your dashd daemons are running properly on your remote servers.
+
+Open up your terminal and type (note: "99" in command below is the number of seconds to keep your wallet unlocked, feel free to choose another one)
+
+walletpassphrase YOURWALLETPASSWORD 99
+
+masternode start-many
+If all is well, you will see something to similar to this (in this example there are 3 Masternodes listed in masternode.conf)
+
+{
+"overall" : "Successfully started 3 masternodes, failed to start 0, total 3",
+"detail" : {
+"status" : {
+"alias" : "MN1",
+"result" : "succesful"
+},
+"status" : {
+"alias" : "MN2",
+"result" : "succesful"
+},
+"status" : {
+"alias" : "MN3",
+"result" : "succesful"
+}
+}
+}
+Verify if your masternode is properly started by either going to Dash Ninja or typing masternode list | grep MASTERNODEIP if you are using Linux.
+
+You can also start each masternode individually using the command:
+masternode start-alias YOURMASTERNODEALIAS
+which is useful if you only want to start an individual masternode.
