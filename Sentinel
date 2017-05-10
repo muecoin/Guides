@@ -29,3 +29,48 @@ You should see: "mued not synced with network! Awaiting full sync before running
 This is exactly what we want to see at this stage
 
 step 6) wait until the reindex has complete and the wallet has synced
+
+step 7) start your masternode
+
+At this point, your remote masternode is synchronized and chatting with the network
+but is not accepted as a masternode because it hasn't been introduced to the network
+by your collateral. 
+
+Go back to your local wallet, open the debug console, and run these commands:
+
+walletpassphrase <YOURPASSPHRASE> 120
+masternode start-alias <MNALIAS>
+
+to start your masternode.
+
+
+step 8) test sentinel has nothing to say
+
+You're needed back in Sentinel directory! 
+
+cd sentinel
+
+At this point, running
+
+venv/bin/python bin/sentinel.py
+
+should return nothing but silence. This is how you know it's working.
+
+step 9) create a crontab entry to wake sentinel every five minutes
+
+crontab -e
+
+Choose nano as your editor. Add this line to the end of the file.
+
+* * * * * cd /home/mue/.muecore/sentinel && ./venv/bin/python bin/sentinel.py 2>&1 >> sentinel-cron.log
+
+
+Make sure you:
+1) Change USERNAME to your username.
+2) Hit enter to create another line at the end after this line, or the file will not work.
+
+Press ctrl w to save and ctrl x exit.
+
+step 10) check for start, try, try, again
+
+cd /home/USERNAME/.muecore
