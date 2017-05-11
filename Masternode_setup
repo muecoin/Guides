@@ -117,6 +117,7 @@ Before proceeding it is best to log off, and log in to the VPS again. This time 
 
 -------------------------------------------------------------------
 If we want to build the daemon instead, we have to setup the building environment before compiling the source:
+Please note that compiling the software requires more than 1GB of RAM memory for the VPS. Please setup a swap file or use a VPS instance with at lest 2GB of RAM memory.
 
 apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils -y
 apt-get install libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev -y
