@@ -34,6 +34,10 @@ In your wallet, go to "Settings" and then "Encrypt Wallet"
 Provide a strong password to secure your funds. Please make sure to remeber this password or write it down and keep it in a bank safe deposit. If you lose your wallet password, there is no means of recovering your funds!
 After providing a strong password, the wallet needs to be restarted to lock and ecrypt your funds. Please restart your wallet for this step to complete.
 
+We need to activate a few advanced wallet fetures before proceeding.
+Click on "Settings" and "Options" and select the two top boxes "Enable coin control features" and "Show Masternodes Tab". 
+Click OK and we are ready to continue.
+
 With the wallet back up and running, it's time to get it ready for the masternode address.
 Open the console by clicking the "Tools" menu and selcting "Debug console"
 The next command providews us with a key for the masternode collateral. Please type
@@ -57,6 +61,9 @@ Please tripple check that the address is correct, and that the sending amount is
 
 After checking everything, send your funds to the address above and wait for the transaction to confirm. Press "send" and write your wallet password to make the transaction.
 Check the "Transactions" tab, and there should be a transaction listed as "Payment to yourself" if you sent the funds from the wallet. Otherwise sending from an exchange will list that transaction address instead.
+
+To avoid spending these funds we can "lock" the transaction in the wallet. This is done with the the coin control features of the wallet. Go back to the "Send" tab of the wallet and click on the "Inputs..." botton.
+Select the box(es) with the 500 000 MUE transfer(s). Right click and chose "Lock unspent". Notice that a small lock icon is shown next to the tranaction. This prevents the coins in this transaction from being spent the next time a transaction is made from the wallet. This is good, because if funds are taken from the holding address, it breaks the transaction for the masternode collateral and the masternode stops working - even if we have more than 500 000 MUE in our cold storage wallet! Should you want to send these funds again, simply right click on the transaction and select "Unlock unspent".
 
 While waiting, let's start working on the VPS (Virtual Private Server) hot node.
 This guide will use Digital Ocean as a VPS provider, but the reader is free to chose whomever they like. The auther has used them for years as a masternode host and they are very reliable. There are definatly cheaper providers, but something to consider is that the masternode needs to be up and running 24/7 for supporting the network. Running a masternode on a cheaper, less reliable host will likely give more downtime and less payments in the longer run.
