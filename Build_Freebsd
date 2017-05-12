@@ -10,3 +10,4 @@ export LDFLAGS="-L/usr/local/lib -L/usr/local/lib/db48"
 ./configure --with-gui=no --without-miniupnpc
 
 gmake -j4
+gmake check
