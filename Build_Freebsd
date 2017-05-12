@@ -1,0 +1,12 @@
+pkg install ca_root_nss autotools pkgconf gmake boost-libs openssl db48 git libevent
+
+export CC=clang
+export CXX=clang++
+export CXXFLAGS="-I/usr/local/include -I/usr/local/include/db48"
+export LDFLAGS="-L/usr/local/lib -L/usr/local/lib/db48"
+./autogen.sh
+
+
+./configure --with-gui=no --without-miniupnpc
+
+gmake -j4
