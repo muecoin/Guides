@@ -1,4 +1,5 @@
 A MUE guide for setting up and hosting a masternode on a Digital Ocean droplet.
+Version 0.0 Initial draft
 
 The MUE network has switched to a Dash-X11 code base, and as such it inherits the strengths that a 2-tier network brings, in terms of a strong masternode network for additional functions and security of the network.
 
