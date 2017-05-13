@@ -27,4 +27,5 @@ git clean -x -f -d
 # Workaround 1277
 sed -i '' 's/^LEVELDB_TARGET_FLAGS = .*$/LEVELDB_TARGET_FLAGS = -DOS_FREEBSD/' src/Makefile
 gmake
-
+----------------------------------------------------------------
+./configure --with-gui=no --without-miniupnpc --disable-tests --enable-hardening CXX=clang++ CXXFLAGS=-I/usr/local/include -I/usr/local/include/db48 -I/usr/local/include/leveldb -g -pthread LDFLAGS=-L/usr/local/lib -L/usr/local/lib/db48 CPPFLAGS=-I/usr/local/include -I/usr/local/include/db48 -I/usr/local/include/leveldb -g -pthread CC=clang CFLAGS=-I/usr/local/include -I/usr/local/include/db48 -I/usr/local/include/leveldb -g -pthread --disable-shared --with-pic --with-bignum=no --enable-module-recovery --disable-shared --with-pic --with-bignum=no --enable-module-recovery --no-create --no-recursion
