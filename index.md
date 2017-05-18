@@ -1,6 +1,6 @@
 # Welcome to the MonetaryUnit documentation!
 ![mue-logo](https://github.com/muecoin/insignia/blob/master/MUE/MUE_logo_width_467.png)
-
+ <a href="https://github.com/muecoin/Guides" id="view-on-github" class="button"><span>View on GitHub</span></a>
 ## Please browse through the guides below for information on howto setup one or more masternodes, build the MUE-wallet on various Linux distrobutions or even a FreeBSD server host. 
 
 --------------------------------------
