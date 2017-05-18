@@ -22,7 +22,7 @@ Open up the termnal and follow the commands below. This sets up the building env
 ### Download and compile Berkley DB 4.8
 
     cd ~
-    mkdir mue/db4/
+    mkdir db4
 
     wget 'http://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz'
     tar -xzvf db-4.8.30.NC.tar.gz
@@ -33,9 +33,9 @@ Open up the termnal and follow the commands below. This sets up the building env
 
 ### Compile mued with Berkley DB 4.8
 
-    cd ~/mue/
+    cd ~/Mue/
     ./autogen.sh
-    ./configure LDFLAGS="-L/home/mue/mue/db4/lib/" CPPFLAGS="-I/home/mue/mue/db4/include/"
+    ./configure LDFLAGS="-L/home/mue/db4/lib/" CPPFLAGS="-I/home/mue/db4/include/"
     make -s -j2
 
 ### Run the MUE Daemon/QT/Client
