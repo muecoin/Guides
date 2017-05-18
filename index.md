@@ -11,7 +11,6 @@
 
 2. [Adding more masternodes to a single cold walet](https://github.com/muecoin/Guides/blob/master/Multiple_Masternodes.md) - Once you have one masternode running, read up on how to add more and control them from your cold wallet!
 
-3. 
 
 
 
@@ -23,4 +22,5 @@
 
 2. [Building the MUE daemon on a FreeBSD server](https://github.com/muecoin/Guides/blob/master/Build_Freebsd.md) - Build and run the mued (MUE daemon) on a FreeBSD host
 
-3. 
+
+---------------------------------------
