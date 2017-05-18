@@ -16,8 +16,8 @@ For starters, the reason for running a dedicated VPS instead of hosting one’s 
 A typical masternode uses around 500 GB or more of traffic per month. Home internet users with traffic caps will have a hard time running a masternode if the bandwidth is limited. It is especially important to have a high speed connection as the masternode is serving up the blockchain. Additional feature to the network will likely require a high speed connection as well.
 
 ### VPS requirements for a masternode
+The minimal requirements for running a masternode are:
 
-	The minimal requirements for running a masternode are:
 	* 1 GB of ram
 	* 1 CPU core 
 	* 20 GB of harddrive space
@@ -313,7 +313,6 @@ Excellent, the firewall is all set!
 
 ------------------------------------------------------------
 
-
 ## Installing the monit service to auto restaret the MUE daemon in case it crashes.
 Remember that the masternode needs to be up and running 24/7 to provide its services to the MonetaryUnit network. If it goes offline the masterndoe will stop being paid for it's services and lose its place in the payment queue.
 
@@ -368,3 +367,15 @@ You can check monit's status with the command:
 	sudo monit status
 
 That's all folks! The monit service will keep your masternode up and running it is crashes for whatever reason. The monit service checks once aminute if the mued process is running, and restarts it, if it is not.
+
+------------------------------------------------------------
+
+## Prevent root from loggin in via ssh for increased security.
+
+One of the most common ways that people try to take over a Linux host, is by trying to login in as the root user. One simple way to increase the security of the Linux VPS is to simply remove this access, as we have another normal user to use instead (user mue in the example above).
+
+Start by logging into the VPS, and edit the `sshd_config` file:
+
+	nano -w /etc/ssh/sshd_config
+	
+Scroll down and look forhte row "AllowrootLogin" "YES", a nd change to "NO"
