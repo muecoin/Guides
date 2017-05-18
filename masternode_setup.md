@@ -378,4 +378,15 @@ Start by logging into the VPS, and edit the `sshd_config` file:
 
 	nano -w /etc/ssh/sshd_config
 	
-Scroll down and look forhte row "AllowrootLogin" "YES", a nd change to "NO"
+Scroll down and look for the row `PermitRootLogin yes`  and change to `no`
+Additionally, we can specify who may connect by adding the line:
+
+	AllowUsers mue
+
+then we may save the configuration by `ctrl o`and `ctrl x`
+
+That's it! The next time you need to access your VPS, login with the user you specified. Your VPS is now secured from users trying to bruteforce the root remote login.
+
+Make sure to update your server and keep an eye on things that they are running smoothly.
+
+	sudo apt-get update && sudo apt-get upgrade && sudo apt autoclean
