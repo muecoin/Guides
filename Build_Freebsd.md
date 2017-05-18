@@ -31,7 +31,23 @@ create a small run script for the building, copy and paste the comands below:
 
 ### Get the source files
 
-    wget https://www.monetaryunit.org/downloads/linux64-1.0.0.1.tar.gz
-    tar -zxvf linux64-1.0.0.1.tar.gz
+    wget https://www.monetaryunit.org/downloads/mue-source64-1.0.0.1.tar.gz
+    tar -zxvf mue-source64-1.0.0.1.tar.gz
 
-When the building i scomplete, the binaries will be in Mue/
+Copy the help script to the source folder
+
+    cp build-mued.sh mue-source64-1.0.0.1
+
+and run the script:
+
+    cd mue-source64
+    sh build-mued.sh
+
+When the building is complete, the binaries will be in Mue/src/
+
+With the binaries now done, run the daemon from its folder:
+
+    cd src
+    ./mued -daemon
+    
+    
