@@ -45,6 +45,8 @@ and run the script:
 
 When the building is complete, the binaries will be in Mue/src/
 
+### Run the daemon
+
 With the binaries now done, run the daemon from its folder:
 
     cd src
