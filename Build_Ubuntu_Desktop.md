@@ -1,6 +1,6 @@
 # Building the MonetaryUnit client wallet on Ubuntu Linux 16.04 LTS
 
-If a user does not want to run the provided binaries from the Monetaryunit project, the client wallet can be built on the linux desktop by following this guide.
+If a user does not want to run the provided binaries from the Monetaryunit project, the client wallet can be built on the Ubuntu Linux desktop by following this guide.
 
 Open up the termnal and follow the commands below. This sets up the building environment and adds the necessary dependencies for the MUE wallet:
 
@@ -22,24 +22,24 @@ Open up the termnal and follow the commands below. This sets up the building env
 ### Download and compile Berkley DB 4.8
 
     cd ~
-    mkdir dash/db4/
+    mkdir mue/db4/
 
     wget 'http://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz'
     tar -xzvf db-4.8.30.NC.tar.gz
     cd db-4.8.30.NC/build_unix/
 
-    ../dist/configure --enable-cxx --disable-shared --with-pic --prefix=/home/evan/db4/
+    ../dist/configure --enable-cxx --disable-shared --with-pic --prefix=/home/mue/db4/
     make install
 
 ### Compile mued with Berkley DB 4.8
 
-    cd ~/dash/
+    cd ~/mue/
     ./autogen.sh
-    ./configure LDFLAGS="-L/home/ubuntu/dash/db4/lib/" CPPFLAGS="-I/home/ubuntu/dash/db4/include/"
-    make -s -j5
+    ./configure LDFLAGS="-L/home/mue/mue/db4/lib/" CPPFLAGS="-I/home/mue/mue/db4/include/"
+    make -s -j2
 
 ### Run the MUE Daemon/QT/Client
 
-    ./src/dashd
-    ./src/dash-qt
-    ./src/dash-cli
+    ./src/mued -daemon
+    ./src/mue-qt
+    ./src/mue-cli
