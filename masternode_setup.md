@@ -127,6 +127,12 @@ Just for good meassures, make sure the user mue is in the right directory:
 
 	cd /home/mue
 
+Before starting the installation, make sure the VPS is all updated and ready to go. Do upgrade the VPS from time to time. Once a week is probably a good routine:
+
+	sudo apt-get update && sudo apt-get upgrade && sudo apt autoclean
+
+Select `y` to proceed with any updates and wait for the VPS to complete the tasks.
+
 Next, download the Linux client, and unpack the compressed files:
 
 	wget https://www.monetaryunit.org/downloads/linux64-1.0.0.1.tar.gz
@@ -387,6 +393,3 @@ then we may save the configuration by `ctrl o`and `ctrl x`
 
 That's it! The next time you need to access your VPS, login with the user you specified. Your VPS is now secured from users trying to bruteforce the root remote login.
 
-Make sure to update your server and keep an eye on things that they are running smoothly.
-
-	sudo apt-get update && sudo apt-get upgrade && sudo apt autoclean
