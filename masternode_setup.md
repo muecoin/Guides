@@ -47,7 +47,7 @@ After providing a strong password, the wallet needs to be restarted to lock and 
 ![wallet password](./Images/03-encrypt-confirm.PNG)
 ![wallet password](./Images/04-encrypt-done-restart-wallet.PNG)
 
-<a href="Images/00-mue-wallet-data-dir.PNGurl"><img src="Images/00-mue-wallet-data-dir.PNG" align="left" width="100" ></a>
+<a href="Images/00-mue-wallet-data-dir.PNGurl"><img src="Images/00-mue-wallet-data-dir.PNG" width="200" ></a>
 
 We need to activate a few advanced wallet features before proceeding.
 Click on `Settings` and `Options` and select the two top boxes
