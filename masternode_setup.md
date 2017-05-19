@@ -36,14 +36,14 @@ Download the Windows client, monetaryunit-1.0.10.8-win64-setup.exe. You may chec
 
 #### Install the client, and then start it.
 You may be prompted by the Windows Firewall to allow the wallet to accept connections on private and open networks. Please select both network boxes and accept. Now, with the client open, let it sync to the network wait for the blockchain to be downloaded. The wallet will attempt to synchronize with the network, no manual actions should be needed at this point.
-![wallet install](Images\00-mue-wallet-data-dir.PNG)
-![wallet install](Images\01_mue_wallet_start_screen.PNG)
+![wallet install](./Images/00-mue-wallet-data-dir.PNG)
+![wallet install](./Images/01_mue_wallet_start_screen.PNG)
 
 #### Protect your funds with a strong password.
 In your wallet, go to `Settings` and then `Encrypt Wallet`
 Provide a strong password to secure your funds. Please make sure to remeber this password or write it down and keep it in a bank safe deposit. If you lose your wallet password, there is no means of recovering your funds!
 After providing a strong password, the wallet needs to be restarted to lock and ecrypt your funds. Please restart your wallet for this step to complete.
-![wallet password](Images\02_encrypt_wallet.PNG)
+![wallet password](./Images/02_encrypt_wallet.PNG)
 
 
 
