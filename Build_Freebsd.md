@@ -3,7 +3,7 @@
 As there are no binaries available for FreeBSD, the user may build the source themselves and run the MUE daemon on a FreeBSD server.
 This guide show how to build the MUE daemon for FreeBSD 11. Other versions of FreeBSD may be possible, but it is outside the scope of this guide.
 
-### Setup the building environement adn install the dependencies
+### Setup the building environement and install the dependencies
 
     pkg install ca_root_nss autotools pkgconf gmake boost-libs openssl db48 git libevent
 
