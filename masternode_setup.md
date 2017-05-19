@@ -318,4 +318,4 @@ Below are a few guides to improving the stability and performance of the mastern
 
 * [Monit - a monitoring service to prevent downtime!](https://github.com/muecoin/Guides/blob/master/monit.md) - Install and configure Monit, a monitoring service to keep your masternode up and running.
 
-* [hardeneding of your VPS](https://github.com/muecoin/Guides/blob/master/hardening_vps.md) - Increase the security of your VPS. Prevent remote root access, block persistent intrusion attempts, and keep your masternode server secure.
+* [Hardening of your VPS](https://github.com/muecoin/Guides/blob/master/hardening_vps.md) - Increase the security of your VPS. Prevent remote root access, block persistent intrusion attempts, and keep your masternode server secure.

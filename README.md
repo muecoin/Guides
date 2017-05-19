@@ -1,7 +1,7 @@
 # Welcome to the MonetaryUnit documentation!
 ![mue-logo](https://github.com/muecoin/insignia/blob/master/MUE/MUE_logo_width_467.png)
 
-## Please browse through the guides below for information on how to setup one or more masternodes, build the MUE-wallet on various Linux distrubutions or even a FreeBSD server host. 
+## Please browse through the guides below for information on how to setup one or more masternodes, build the MUE-wallet on various Linux distrubutions or even a FreeBSD server host.
 
 --------------------------------------
 
@@ -11,6 +11,11 @@
 
 2. [Adding more masternodes to a single cold walet](https://github.com/muecoin/Guides/blob/master/Multiple_Masternodes.md) - Once you have one masternode running, read up on how to add more and control them from your cold wallet!
 
+3. [Setting up a firewall to protect the masternode](https://github.com/muecoin/Guides/blob/master/ufw-firewall.md) - Install and configure to run the UFW firewall on the VPS. This is critical to protecting the masternode against remote attacks.
+
+4. [Monit - a monitoring service to prevent downtime!](https://github.com/muecoin/Guides/blob/master/monit.md) - Install and configure Monit, a monitoring service to keep your masternode up and running.
+
+5. [Hardening of your VPS](https://github.com/muecoin/Guides/blob/master/hardening_vps.md) - Increase the security of your VPS. Prevent remote root access, block persistent intrusion attempts, and keep your masternode server secure.
 
 
 
