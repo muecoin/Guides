@@ -44,26 +44,29 @@ In your wallet, go to `Settings` and then `Encrypt Wallet`
 Provide a strong password to secure your funds. Please make sure to remeber this password or write it down and keep it in a bank safe deposit. If you lose your wallet password, there is no means of recovering your funds!
 After providing a strong password, the wallet needs to be restarted to lock and ecrypt your funds. Please restart your wallet for this step to complete.
 ![wallet password](./Images/02_encrypt_wallet.PNG)
+![wallet password](./Images/03-encrypt-confirm.PNG)
+![wallet password](./Images/04-encrypt-done-restart-wallet.PNG)
 
-
-
-We need to activate a few advanced wallet fetures before proceeding.
+We need to activate a few advanced wallet features before proceeding.
 Click on `Settings` and `Options` and select the two top boxes
 
 	"Enable coin control features" and "Show Masternodes Tab"
 
 Click `OK` and we are ready to continue.
+![wallet password](./Images/07-options-mastenode-tab-coincontrol.PNG)
 
 With the wallet back up and running, it's time to get it ready for the masternode address.
 
-Open the console by clicking the `Tools` menu and selcting `Debug console`
-The next command providews us with a key for the masternode collateral. Please type
+Open the console by clicking the `Tools` menu and selecting `Debug console`
+The next command provides us with a key for the masternode collateral. Please type
 
 	masternode genkey
 
 and hit enter. The output will look something like this:
 
 	7qm78BkY2LvriqGVTwRoXJWRTZkm9yH79L2FbRTp9NrQaTKRcGZ
+
+![wallet password](./Images/12-masternode-genkey.PNG)
 
 Note: this is not the same as a MUE address private key. This key is used to communicate to the MUE netork that this is a masternode, it cannot be used to move the collateral funds. The key is used to announce the precence of the masternode to the network, or remove the node from the mastrenode list.
 
