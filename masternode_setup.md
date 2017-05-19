@@ -19,44 +19,49 @@ A typical masternode uses around 500 GB or more of traffic per month. Home inter
 The minimal requirements for running a masternode are:
 
 	* 1 GB of ram
-	* 1 CPU core 
+	* 1 CPU core
 	* 20 GB of harddrive space
-	* a high speed internet connection and at least a transfer of 500 GB per month. 
+	* a high speed internet connection and at least a transfer of 500 GB per month.
 
 Better hardware can be used to help the masternode performance, but using less than the required minimal hardware can make the masternode unstable and cause the node to crash or perform poorly. By doing so, the node can get kicked off the masternode lists, causing the masternode to lose payments.
 
 
 ### Setting up a local wallet for cold storage and a hot wallet (masternode) on a VPS
 
-Let's start by getting thew wallet for your platform.
-Please go the website: https://monetaryunit.org/download/ and select the wallet that matches your computer. For this tutorial wwe will be using a 64-bit Windows machine for the cold storage wallet and a Linux VPS for the hot masternode daemon.
+Let's start by getting the wallet for your platform.
+Please go the website: https://monetaryunit.org/download/ and select the wallet that matches your computer. For this tutorial we will be using a 64-bit Windows machine for the cold storage wallet and a Linux VPS for the hot masternode daemon.
 
 #### Install wallet on local machine
 Download the Windows client, monetaryunit-1.0.10.8-win64-setup.exe. You may check the files with the provided checksums, verify that the files downloaded correctly, and if they are different, please redownload the client again.
 
 #### Install the client, and then start it.
-You may be promted by the Windows Firewall to allow the wallet to accept connections on privat an dopen networks. Please select both network boxes and accept. Now, with the client open, let it sync to the network wait for the blockchain to be downloaded. The wallet will attempt to synchronize with the network, no manual actions should be needed at this point.
+You may be prompted by the Windows Firewall to allow the wallet to accept connections on private and open networks. Please select both network boxes and accept. Now, with the client open, let it sync to the network wait for the blockchain to be downloaded. The wallet will attempt to synchronize with the network, no manual actions should be needed at this point.
+![wallet install](Images\00-mue-wallet-data-dir.PNG)
+![wallet install](Images\01_mue_wallet_start_screen.PNG)
 
 #### Protect your funds with a strong password.
 In your wallet, go to `Settings` and then `Encrypt Wallet`
 Provide a strong password to secure your funds. Please make sure to remeber this password or write it down and keep it in a bank safe deposit. If you lose your wallet password, there is no means of recovering your funds!
 After providing a strong password, the wallet needs to be restarted to lock and ecrypt your funds. Please restart your wallet for this step to complete.
+![wallet password](Images\02_encrypt_wallet.PNG)
+
+
 
 We need to activate a few advanced wallet fetures before proceeding.
-Click on `Settings` and `Options` and select the two top boxes 
+Click on `Settings` and `Options` and select the two top boxes
 
-	"Enable coin control features" and "Show Masternodes Tab" 
+	"Enable coin control features" and "Show Masternodes Tab"
 
 Click `OK` and we are ready to continue.
 
 With the wallet back up and running, it's time to get it ready for the masternode address.
-	
+
 Open the console by clicking the `Tools` menu and selcting `Debug console`
 The next command providews us with a key for the masternode collateral. Please type
 
 	masternode genkey
 
-and hit enter. The output will look something like this: 
+and hit enter. The output will look something like this:
 
 	7qm78BkY2LvriqGVTwRoXJWRTZkm9yH79L2FbRTp9NrQaTKRcGZ
 
@@ -100,7 +105,7 @@ Click connect and a block window will open up, promting you for your login and p
 
 
 Once logged in, it is smart to change the root password to something more secure. Remeber that the email with the root passowrd was sent in plain text, better change that and secure your VPS!
-Type the command: 
+Type the command:
 
 	passwd
 
@@ -215,7 +220,7 @@ The MUE client will start downloading the blockchain, and syncronize to the netw
 Open the Windows MUE client again, and under the menu `Tools` look for the option `Open Masternode Configuration File` near the bottom of the list. Select that option to open up the configuration file. If prompted, select to open the file in Notepad.
 The syntax of this file is very important, but it is also very straight forward.
 
-The masternode.conf file needs a few values; 
+The masternode.conf file needs a few values;
 
 	Format: alias IP:port masternodeprivkey collateral_output_txid collateral_output_index
 
@@ -243,7 +248,7 @@ Put these values in the `masternode.conf` all on one single line, save the file 
 
 When the cold wallet starts up again, check the masternode tab, and the masternode should be visable in the list of your own masternodes.
 
-## Final last commands on the VPS again, and let's check the status of the masternode. 
+## Final last commands on the VPS again, and let's check the status of the masternode.
 
 	mue-cli mnsync status
 
@@ -262,7 +267,7 @@ It will be ready when the output looks like this:
 	}
 
 If the output is different, please wait for the node to finnish syncing, and try the command `mue-cli mnsync status` again
-When the hot node is all synced and ready, the node is communicating to the MonetaryUnit network and waiting for further instructions. The masternode is not yet accepted by the other masternodes, we must start it first. 
+When the hot node is all synced and ready, the node is communicating to the MonetaryUnit network and waiting for further instructions. The masternode is not yet accepted by the other masternodes, we must start it first.
 
 We need to activate the masternode, so we move back to the cold wallet on Windows.
 Check the masternode tab of the wallet.
@@ -290,7 +295,7 @@ Let's get a simple firewall up and running:
 	sudo apt-get install ufw
 
 After installing, we need to setup some basic firewall rules. If something goes wrong, you can turn off the firewall with the command:
-	
+
 	sudo ufw disable
 
 Please enter the firewall rules as shown below:
@@ -327,7 +332,7 @@ Let's install monit:
 	sudo apt-get install monit
 
 Create a small file to start the mued
-	
+
 	nano -w /home/mue/start-mued.sh
 
 and add the command below to the file:
@@ -383,7 +388,7 @@ One of the most common ways that people try to take over a Linux host, is by try
 Start by logging into the VPS, and edit the `sshd_config` file:
 
 	sudo nano -w /etc/ssh/sshd_config
-	
+
 Scroll down and look for the row `PermitRootLogin yes`  and change to `no`
 Additionally, we can specify who may connect by adding the line, where `mue` is the user account on the VPS:
 
@@ -392,4 +397,3 @@ Additionally, we can specify who may connect by adding the line, where `mue` is 
 then we may save the configuration by `ctrl o`and `ctrl x`
 
 That's it! The next time you need to access your VPS, login with the user you specified. Your VPS is now secured from users trying to bruteforce the root remote login.
-
