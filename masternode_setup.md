@@ -20,7 +20,7 @@ The minimal requirements for running a masternode are:
 
 	* 1 GB of ram
 	* 1 CPU core
-	* 20 GB of harddrive space
+	* 20 GB of hard drive space
 	* a high speed internet connection and at least a transfer of 500 GB per month.
 
 Better hardware can be used to help the masternode performance, but using less than the required minimal hardware can make the masternode unstable and cause the node to crash or perform poorly. By doing so, the node can get kicked off the masternode lists, causing the masternode to lose payments.
@@ -32,17 +32,19 @@ Let's start by getting the wallet for your platform.
 Please go the website: https://monetaryunit.org/download/ and select the wallet that matches your computer. For this tutorial we will be using a 64-bit Windows machine for the cold storage wallet and a Linux VPS for the hot masternode daemon.
 
 #### Install wallet on local machine
-Download the Windows client, monetaryunit-1.0.10.8-win64-setup.exe. You may check the files with the provided checksums, verify that the files downloaded correctly, and if they are different, please redownload the client again.
+Download the Windows client, monetaryunit-1.0.10.8-win64-setup.exe. You may check the files with the provided checksums, verify that the files downloaded correctly, and if they are different, please re-download the client again.
 
 #### Install the client, and then start it.
 You may be prompted by the Windows Firewall to allow the wallet to accept connections on private and open networks. Please select both network boxes and accept. Now, with the client open, let it sync to the network wait for the blockchain to be downloaded. The wallet will attempt to synchronize with the network, no manual actions should be needed at this point.
+
 <a href="Images/00-mue-wallet-data-dir.PNG"><img src="Images/00-mue-wallet-data-dir.PNG" width="400" ></a>
 <a href="Images/01_mue_wallet_start_screen.PNG"><img src="Images/01_mue_wallet_start_screen.PNG" width="400" ></a>
 
 #### Protect your funds with a strong password.
 In your wallet, go to `Settings` and then `Encrypt Wallet`
-Provide a strong password to secure your funds. Please make sure to remeber this password or write it down and keep it in a bank safe deposit. If you lose your wallet password, there is no means of recovering your funds!
+Provide a strong password to secure your funds. Please make sure to remember this password or write it down and keep it in a bank safe deposit. If you lose your wallet password, there is no means of recovering your funds!
 After providing a strong password, the wallet needs to be restarted to lock and encrypt your funds. Please restart your wallet for this step to complete.
+
 <a href="Images/02_encrypt_wallet.PNG"><img src="Images/02_encrypt_wallet.PNG" width="400" ></a>
 <a href="Images/03-encrypt-confirm.PNG"><img src="Images/03-encrypt-confirm.PNG" width="400" ></a>
 <a href="Images/04-encrypt-done-restart-wallet.PNG"><img src="Images/04-encrypt-done-restart-wallet.PNG" width="400" ></a>
@@ -53,7 +55,8 @@ Click on `Settings` and `Options` and select the two top boxes
 	"Enable coin control features" and "Show Masternodes Tab"
 
 Click `OK` and we are ready to continue.
-![wallet password](./Images/07-options-mastenode-tab-coincontrol.PNG)
+
+<a href="Images/07-options-mastenode-tab-coincontrol.PNG"><img src="Images/07-options-mastenode-tab-coincontrol.PNG" width="400" ></a>
 
 With the wallet back up and running, it's time to get it ready for the masternode address.
 
@@ -66,23 +69,32 @@ and hit enter. The output will look something like this:
 
 	7qm78BkY2LvriqGVTwRoXJWRTZkm9yH79L2FbRTp9NrQaTKRcGZ
 
-![wallet password](./Images/12-masternode-genkey.PNG)
+<a href="Images/12-masternode-genkey.PNG"><img src="Images/12-masternode-genkey.PNG" width="400" ></a>
 
-Note: this is not the same as a MUE address private key. This key is used to communicate to the MUE netork that this is a masternode, it cannot be used to move the collateral funds. The key is used to announce the precence of the masternode to the network, or remove the node from the mastrenode list.
+Note: this is not the same as a MUE address private key. This key is used to communicate to the MUE network that this is a masternode, it cannot be used to move the collateral funds. The key is used to announce the presence of the masternode to the network, or remove the node from the masternode list.
 
-Next, we need to make a transaction of exactly 500 000 MUE to an address. This is very important, the transaction must be exaclty 500 000 MUE for the collateral, no more and no less.
-Go to the `Recieve` tab of your wallet and in the Label field write `Masternode Collateral` and keep the two checkboxes `Reuse an existiing recieving address` and `Request InstantSend` unchecked. Click the orange button `Request payment` to get a new address:
+Next, we need to make a transaction of exactly 500 000 MUE to an address. This is very important, the transaction must be exactly 500 000 MUE for the collateral, no more and no less.
+Go to the `Receive` tab of your wallet and in the Label field write `Masternode Collateral` and keep the two checkboxes `Reuse an existing receiving address` and `Request InstantSend` unchecked. Click the orange button `Request payment` to get a new address:
 
 	7WszYALmCVMJLN39JngawyVszvwrjYMEub
 
-This is the addtress we will be sendig our collateral to.
+This is the address we will be sending our collateral to.
 
-Next, make a transaction of exactly `500 000` MUE to the adddress you just generated. If you are sending from you own wallet or from an exchange, make sure that any transaction fees are not taken from the sending amount. It is crucial that the collateral transaction is exactly `500 000` MUE and made in one (1) single transaction.
+<a href="Images/13-masternode-address.PNG"><img src="Images/13-masternode-address.PNG" width="400" ></a>
 
-Go to the `Send` tab of your wallet and paste in the MUE address to recieve the collateral funds.
+Next, make a transaction of exactly `500 000` MUE to the address you just generated. If you are sending from you own wallet or from an exchange, make sure that any transaction fees are not taken from the sending amount. It is crucial that the collateral transaction is exactly `500 000` MUE and made in one (1) single transaction.
+
+Go to the `Send` tab of your wallet and paste in the MUE address to receive the collateral funds.
 Uncheck the box with `Subtract fee from amount` and ensure that the sending amount is exactly `500 000` MUE.
 
-Please tripple check that the address is correct, and that the sending amount is `500 000` MUE. If you by mistake send your funds to the wrong address, *THEY WILL BE GONE!*
+Please triple check that the address is correct, and that the sending amount is `500 000` MUE. If you by mistake send your funds to the wrong address, *THEY WILL BE GONE!*
+
+<a href="Images/14-send-collateral-transaction.PNG"><img src="Images/14-send-collateral-transaction.PNG" width="400" ></a>
+<a href="Images/15-confirm-sending.PNG"><img src="Images/15-confirm-sending.PNG" width="400" ></a>
+<a href="Images/16-payment-to-yourself.PNG"><img src="Images/16-payment-to-yourself.PNG" width="400" ></a>
+
+
+
 
 After checking everything, send your funds to the address above and wait for the transaction to confirm. Press `send` and write your wallet password to make the transaction.
 Check the `Transactions` tab, and there should be a transaction listed as `Payment to yourself` if you sent the funds from the wallet. Otherwise sending from an exchange will list that transaction address instead.
