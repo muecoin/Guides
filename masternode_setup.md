@@ -307,98 +307,16 @@ Verify the status on your hot node with the command:
 Well done!
 Congratulations to successfully getting your masternode up and running!
 
----------------------------------------------------------------------------
-## Setting up a simpe firewall
-Additional steps to improve the hot node is to install a service that restarts your masternode in case it crashes, and a firewall to help the ntworking performace and reduce the risk of malicious network activities.
-
-Let's get a simple firewall up and running:
-
-	sudo apt-get install ufw
-
-After installing, we need to setup some basic firewall rules. If something goes wrong, you can turn off the firewall with the command:
-
-	sudo ufw disable
-
-Please enter the firewall rules as shown below:
-
-	sudo ufw allow ssh/tcp
-	sudo ufw limit ssh/tcp
-	sudo ufw allow 29988/tcp
-	sudo ufw logging on
-	sudo ufw enable
-
-Verify the firewall setting with:
-
-	sudo ufw status
-
-	sudo ufw status
-	Status: active
-
-	To                         Action      From
-	--                         ------      ----
-	22/tcp                     LIMIT       Anywhere
-	29988/tcp                  ALLOW       Anywhere
-	22/tcp (v6)                LIMIT       Anywhere (v6)
-	29988/tcp (v6)             ALLOW       Anywhere (v6)
-
-Excellent, the firewall is all set!
 
 ------------------------------------------------------------
 
-## Installing the monit service to auto restaret the MUE daemon in case it crashes.
-Remember that the masternode needs to be up and running 24/7 to provide its services to the MonetaryUnit network. If it goes offline the masterndoe will stop being paid for it's services and lose its place in the payment queue.
+## Additional help guides
 
-Let's install monit:
+Below are a few guides to improving the stability and performance of the masternode VPS
 
-	sudo apt-get install monit
+* [Setting up a firewall to protect the masternode](https://github.com/muecoin/Guides/blob/master/ufw-firewall.md) - Install and configure to run the UFW firewall on the VPS. This is critical to protecting the masternode against remote attacks. 
 
-Create a small file to start the mued
-
-	nano -w /home/mue/start-mued.sh
-
-and add the command below to the file:
-
-	#!/bin/bash
-	/bin/su mue -c '/home/mue/bin/mued -daemon 2>&1 >> /home/mue/.muecore/rc.local.log'
-
-save and close nano with `ctrl o` and `ctrl x`
-
-Make the helper file executable:
-
-	chmod 755 /home/mue/start-mued.sh
-
-Edit the file /etc/monit/monitrc
-
-	sudo nano /etc/monit/monitrc
-
-Edit the file as follows:
-
-uncomment these lines
-
-	set httpd port 2812 and
-	use address localhost  # only accept connection from localhost
-	allow localhost        # allow localhost to connect to the server and
-
-add this to bottom - change user to your user and paths
-
-	check process mued with pidfile /home/mue/.muecore/mued.pid
-	start program = "/home/mue/start-mued.sh" with timeout 60 seconds
-	stop program = "/bin/su mue -c /home/mue/bin/mue-cli stop"
-
-Load the new configuration:
-
-	sudo monit reload
-
-Enable the monitoring service:
-
-	sudo monit start mued
-
-That’s it. You only have to do the above once.
-You can check monit's status with the command:
-
-	sudo monit status
-
-That's all folks! The monit service will keep your masternode up and running it is crashes for whatever reason. The monit service checks once aminute if the mued process is running, and restarts it, if it is not.
+*
 
 ------------------------------------------------------------
 
