@@ -314,25 +314,8 @@ Congratulations to successfully getting your masternode up and running!
 
 Below are a few guides to improving the stability and performance of the masternode VPS
 
-* [Setting up a firewall to protect the masternode](https://github.com/muecoin/Guides/blob/master/ufw-firewall.md) - Install and configure to run the UFW firewall on the VPS. This is critical to protecting the masternode against remote attacks. 
+* [Setting up a firewall to protect the masternode](https://github.com/muecoin/Guides/blob/master/ufw-firewall.md) - Install and configure to run the UFW firewall on the VPS. This is critical to protecting the masternode against remote attacks.
 
-*
+* [Monit - a monitoring service to prevent downtime!](https://github.com/muecoin/Guides/blob/master/monit.md) - Install and configure Monit, a monitoring service to keep your masternode up and running.
 
-------------------------------------------------------------
-
-## Prevent root from loggin in via ssh for increased security.
-
-One of the most common ways that people try to take over a Linux host, is by trying to login in as the root user. One simple way to increase the security of the Linux VPS is to simply remove this access, as we have another normal user to use instead (user mue in the example above).
-
-Start by logging into the VPS, and edit the `sshd_config` file:
-
-	sudo nano -w /etc/ssh/sshd_config
-
-Scroll down and look for the row `PermitRootLogin yes`  and change to `no`
-Additionally, we can specify who may connect by adding the line, where `mue` is the user account on the VPS:
-
-	AllowUsers mue
-
-then we may save the configuration by `ctrl o`and `ctrl x`
-
-That's it! The next time you need to access your VPS, login with the user you specified. Your VPS is now secured from users trying to bruteforce the root remote login.
+* [hardeneding of your VPS](https://github.com/muecoin/Guides/blob/master/hardening_vps.md) - Increase the security of your VPS. Prevent remote root access, block persistent intrusion attempts, and keep your masternode server secure.
