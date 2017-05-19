@@ -367,7 +367,7 @@ Enable the monitoring service:
 
 	sudo monit start mued
 
-That’s it. You only have to do above once.
+That’s it. You only have to do the above once.
 You can check monit's status with the command:
 
 	sudo monit status
@@ -382,10 +382,10 @@ One of the most common ways that people try to take over a Linux host, is by try
 
 Start by logging into the VPS, and edit the `sshd_config` file:
 
-	nano -w /etc/ssh/sshd_config
+	sudo nano -w /etc/ssh/sshd_config
 	
 Scroll down and look for the row `PermitRootLogin yes`  and change to `no`
-Additionally, we can specify who may connect by adding the line:
+Additionally, we can specify who may connect by adding the line, where `mue` is the user account on the VPS:
 
 	AllowUsers mue
 
