@@ -54,6 +54,6 @@ With the binaries now done, run the daemon from its folder:
     
 and run the command line interface with
 
-    mue-cli getinfo
+    ./mue-cli getinfo
 
 Congratulations! You have successfully built the Monetaryunit daemon on a FreeBSD host!
