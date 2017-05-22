@@ -15,7 +15,7 @@ In the console, log in as root and run the setup commands:
 
     yum update && yum upgrade
     wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-    yum install epel-release-latest-7.rpm
+    yum install epel-release-latest-7.noarch.rpm
 
 ### Installing the support packages and dependencies
 
