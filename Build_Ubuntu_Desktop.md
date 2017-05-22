@@ -22,6 +22,8 @@ Open up the terminal and follow the commands below. This sets up the building en
     cd ~
     git clone https://github.com/monetaryunit/MUE-X11/mue.git
 
+### ./autogen.sh && ./configure --with-incompatible-bdb --without-miniupnpc && make
+
 ### Download and compile Berkley DB 4.8
 
     cd ~
