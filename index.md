@@ -26,5 +26,6 @@
 
 2. [Building the MUE daemon on a FreeBSD server](https://github.com/muecoin/Guides/blob/master/Build_Freebsd.md) - Build and run the mued (MUE daemon) on a FreeBSD host
 
+3. [Building the MUE daemon on a CentOS7 server](https://github.com/muecoin/Guides/blob/master/Build_CentOS_7.md) - Build and run the mued (MUE daemon) on a CentOS 7 host
 
 ---------------------------------------
