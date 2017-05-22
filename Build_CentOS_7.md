@@ -10,6 +10,7 @@ Extra Packages for Enterprise Linux (or EPEL) is a Fedora Special Interest Group
 EPEL packages are usually based on their Fedora counterparts and will never conflict with or replace packages in the base Enterprise Linux distributions. EPEL uses much of the same infrastructure as Fedora, including buildsystem, bugzilla instance, updates manager, mirror manager and more._
 
 ### Installing the EPEL repository
+For a x86_64 based CentOS 7 system:
 In the console, log in as root and run the setup commands:
 
     yum update && yum upgrade
@@ -18,32 +19,44 @@ In the console, log in as root and run the setup commands:
 
 ### Installing the support packages and dependencies
 
-    yum install autoconf automake gcc-c++ libdb4-cxx libdb4-cxx-devel boost-devel openssl-devel
+    yum install autoconf automake gcc-c++ libdb4-cxx libdb4-cxx-devel boost-devel openssl-devel libtool libevent-devel
 
+### Get the MonetaryUnit source for building
 
+Down load the source and unpack the file.
 
-===== Download, Build and Install Bitcoin  =====
-Now we will download, extract, build, and install Bitcoin the source.  In this article we are downloading Bitcoin version 0.9.4
+    wget https://monetaryunit.org/download/linux64-1.0.0.1.tar.gz
+    tar -zxvf linux64-1.0.0.1.tar.gz
 
-<code console>
-cd /usr/src
-wget https://github.com/bitcoin/bitcoin/archive/v0.9.4.tar.gz
-tar zxvf v0.9.4.tar.gz
-cd bitcoin-0.9.4
-./autogen.sh
-./configure --prefix=/opt/bitcoin PKG_CONFIG_PATH=/opt/openssl/lib/pkgconfig LIBS=-Wl,-rpath,/opt/openssl/lib
-make
-make install
+### Configure and compile the source
 
+    cd MUE/linux64-1.0.0.1
+    ./autogen.sh && ./configure --with-incompatible-bdb --without-miniupnpc && make
 
-Build and Install OpenSSL Required Dependency
-Unfortunately the openssl thats provided with CentOS is lacking EC Libraries so we are going to have to download, build, and install a separate copy of OpenSSL
+### Run the daemon and check the MUE console
 
-cd /usr/src
-wget https://www.openssl.org/source/openssl-1.0.1l.tar.gz
-tar zxvf openssl-1.0.1l.tar.gz
-cd openssl-1.0.1l
-export CFLAGS="-fPIC"
-./config --prefix=/opt/openssl shared enable-ec enable-ecdh enable-ecdsa
-make all
-make install
+    cd src/
+    ./mued -daemon
+    MonetaryUnit Core server starting
+
+    ./mue-cli getinfo
+    {
+      "version": 1000001,
+      "protocolversion": 70206,
+      "walletversion": 61000,
+      "balance": 0.00000000,
+      "privatesend_balance": 0.00000000,
+      "blocks": 231,
+      "timeoffset": 0,
+      "connections": 1,
+      "proxy": "",
+      "difficulty": 0.0002441371325370145,
+      "testnet": false,
+      "keypoololdest": 1495447627,
+      "keypoolsize": 1001,
+      "paytxfee": 0.00000000,
+      "relayfee": 0.00010000,
+      "errors": ""
+    }
+
+That's it! Congratulations on setting up the MonetaryUnit daemon on a CentOS 7 system!
