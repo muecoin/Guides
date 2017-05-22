@@ -109,6 +109,8 @@ Sign up for a new account, log in and click `New Droplet`
 For this guide we are looking to start a `16.04 Ubuntu` version of Linux as the host:
 Select the `1 GB / 1 CPU, 30 GB SSD Disk, 2 TB Transfer` version. The $10 USD credit provided via the promotional code will give most of the first month hosting for free! Chose a location, it doesn't really matter, but it might be better to chose a location closer to yourself for the remote management.
 
+-----------------------------------------------------------
+
 #### Optional server setups
 If you like, the MonetaryUnit team offers guides for running other server distributions:
 * [Building the MUE daemon on a FreeBSD server](https://github.com/muecoin/Guides/blob/master/Build_Freebsd.md) - Build and run the mued (MUE daemon) on a FreeBSD host
@@ -116,6 +118,9 @@ If you like, the MonetaryUnit team offers guides for running other server distri
 *  [Building the MUE daemon on a CentOS7 server](https://github.com/muecoin/Guides/blob/master/Build_CentOS_7.md) - Build and run the mued (MUE daemon) on a CentOS 7 host
 
 If you like, install one of the other server distributions and then continue to follow this masternode setup guide.
+Please note, that paths and commands may differ on the server systems above from this guide. Users setting up a masternode on software besides Ubuntu 16.04 is expected to know how to modify the steps to suit their platform.
+
+-----------------------------------------------------------
 
 <a href="Images/17-ubuntu-1604-10usd-droplet.PNG"><img src="Images/17-ubuntu-1604-10usd-droplet.PNG" width="400" ></a>
 
