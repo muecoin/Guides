@@ -7,7 +7,7 @@ The MUE network has switched to a Dash-X11 code base, and as such it inherits th
 
 The masternodes perform tasks for the MUE network. These are for instance InstantSend, PrivateSend, storage of the blockchain and governance capabilities. As a reward for running these functions, the masternodes are paid out a part of the block reward for their services. The block reward is 40 MUE per block and each block occurs on average every 40 seconds, thus growing the supply 1 MUE every second.
 
-The block reward is split in three providing 45% to the miner who solved the block, 45% to the masternode for it’s services and the remaining 10% going to the continuous funding of the MUE project. The masternode reward is 45%*40 MUE = 18 MUE per block.
+The block reward is split in three providing 45% to the miner who solved the block, 45% to the masternode for it’s services and the remaining 10% going to the continuous funding of the MUE project. The masternode reward is 45% * 40 MUE = 18 MUE per block.
 
 ## How to setup a Virtual Private Server (VPS) and run a MUE masternode.
 
@@ -108,6 +108,14 @@ This promotion & referral code `https://m.do.co/c/0c50700df3bf` gives every new 
 Sign up for a new account, log in and click `New Droplet`
 For this guide we are looking to start a `16.04 Ubuntu` version of Linux as the host:
 Select the `1 GB / 1 CPU, 30 GB SSD Disk, 2 TB Transfer` version. The $10 USD credit provided via the promotional code will give most of the first month hosting for free! Chose a location, it doesn't really matter, but it might be better to chose a location closer to yourself for the remote management.
+
+#### Optional server setups
+If you like, the MonetaryUnit team offers guides for running other server distributions:
+* [Building the MUE daemon on a FreeBSD server](https://github.com/muecoin/Guides/blob/master/Build_Freebsd.md) - Build and run the mued (MUE daemon) on a FreeBSD host
+
+*  [Building the MUE daemon on a CentOS7 server](https://github.com/muecoin/Guides/blob/master/Build_CentOS_7.md) - Build and run the mued (MUE daemon) on a CentOS 7 host
+
+If you like, install one of the other server distributions and then continue to follow this masternode setup guide.
 
 <a href="Images/17-ubuntu-1604-10usd-droplet.PNG"><img src="Images/17-ubuntu-1604-10usd-droplet.PNG" width="400" ></a>
 
