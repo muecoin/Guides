@@ -2,7 +2,7 @@
 
 If a user does not want to run the provided binaries from the Monetaryunit project, the client wallet can be built on the Ubuntu Linux desktop by following this guide.
 
-Open up the termnal and follow the commands below. This sets up the building environment and adds the necessary dependencies for the MUE wallet:
+Open up the terminal and follow the commands below. This sets up the building environment and adds the necessary dependencies for the MUE wallet:
 
     sudo apt-get update
     sudo apt-get upgrade
@@ -15,7 +15,7 @@ Open up the termnal and follow the commands below. This sets up the building env
 
 
 ### Download the MUE source code
-    
+
     cd ~
     git clone https://github.com/monetaryunit/MUE-X11/mue.git
 
