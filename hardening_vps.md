@@ -15,4 +15,17 @@ Additionally, we can specify who may connect by adding the line, where `mue` is 
 
 then we may save the configuration by `ctrl o` and `ctrl x`
 
-That's it! The next time you need to access your VPS, login with the user you specified. Your VPS is now secured from users trying to bruteforce the root remote login.
+That's it! The next time you need to access your VPS, login with the user you specified. Your VPS is now secured from users trying to brute force the root remote login, they will just fill up the logs with unsuccessful login attempts.
+
+---------------------------------------------------------
+
+## Install Fail2ban for blocking ssh brute force attempts
+
+Fail2ban is a tool that checks the `SSHD` logs, and searches for brute force attempts. If it finds an attack, where a user has more failed login attempts than a predefined threshold, the IP is banned in the firewall. Again, after a time limit, the IP is unbanned and the user may try again.
+
+Running ssh on the default port 22 will give a lot of intrusion attempts from malicious boxes and script kiddies trying to guess the login of a host. Many times the attacker runs a script that goes through various common login names like adam, betty, carrie and david..... hoping for weak and bad passwords.
+
+In order to keep the admin's sanity, Fail2ban will stop the attackers and keep the logs cleaner.
+
+Please check the following guide for more information on how to install and setup Fail2ban on various Linux systems:
+https://www.linode.com/docs/security/using-fail2ban-for-security
