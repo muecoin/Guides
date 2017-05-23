@@ -49,37 +49,28 @@ Copy the `output` and paste it in the `wallet console`
 
 <img src="Images/103-proposal.png" >
 
-Hit `Enter` and in the console you will get a new output:
+Hit `Enter` and in the console you will get a new output, that we will need for the next step:
 
 <img src="Images/104-proposal.png" >
 
-it will then give you an output
-
-<img src="Images/105-proposal.png" >
-
-you will need to keep the output:    
+The output in this example:    
 
   f748d08b9ca3d17519a8ed86143a6cfc3c9d4c5f9bdafefc79b739029c5672a4
 
-for the next step back on the proposal page.
+will be needed for the next step back on the proposal page.
 
+You can verify that a transaction has been made for the proposal, for the live mainnet the cost for a proposal is set to 500 MUE. For the current testing the fee has been set to 5 MUE. Please wait for six (6) confirmations (about 2.5 minutes) before proceeding with the next step.
 
+<img src="Images/105-proposal.png" >
 
-next goto the transactions page
-and you will see that you have sent 5 mue (the cost of the proposal
+# Proceeding on the Proposal page
 
+The output from the QT-wallet `    f748d08b9ca3d17519a8ed86143a6cfc3c9d4c5f9bdafefc79b739029c5672a4`
+needs to be pasted in the proposal page underneath the big gray box:
 
+    <img src="Images/105-proposal.png" >
 
-you will now need to wait for this to have at least 6 confirms
-
-ok next step
-
-go back to the website
-
-and paste in the
-f748d08b9ca3d17519a8ed86143a6cfc3c9d4c5f9bdafefc79b739029c5672a4
-
-it will then goto the last step
+it will then proceed with the last step
 
 
 go back to your debug console
