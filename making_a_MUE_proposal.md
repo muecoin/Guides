@@ -44,13 +44,14 @@ And it will take you to the next page, and the next step
 ## Pasting outputs in the QT-wallet
 
 The next step is to paste the outputs from the proposal page into the console of the QT-wallet.
+
 Copy the `output` and paste it in the `wallet console`
 
-<a href="Images/103-proposal.png"><img src="Images/103-proposal.png" ></a>
+<img src="Images/103-proposal.png" ></a>
 
 Hit `Enter` and in the console you will get a new output:
 
-<a href="Images/104-proposal.png"><img src="Images/104-proposal.png" ></a>
+<img src="Images/104-proposal.png" ></a>
 
 
 
