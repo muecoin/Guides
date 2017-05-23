@@ -80,7 +80,7 @@ Copy the output once again and paste it into your wallet console:
 
 this will give you this
 
-    __ec6156877ffccfc9b5b99101a13c673b9ce856bcd9909a2fec9f2bb2af7a72b8__
+__ec6156877ffccfc9b5b99101a13c673b9ce856bcd9909a2fec9f2bb2af7a72b8__
 
 For the network to vote on your proposal, you need to provide the correct `Proposal ID` commands:
 
