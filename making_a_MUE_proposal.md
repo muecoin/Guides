@@ -61,18 +61,18 @@ will be needed for the next step back on the proposal page.
 
 You can verify that a transaction has been made for the proposal, for the live mainnet the cost for a proposal is set to 500 MUE. For the current testing the fee has been set to 5 MUE. Please wait for six (6) confirmations (about 2.5 minutes) before proceeding with the next step.
 
-<img src="Images/105-proposal.png" >
-
 # Proceeding on the Proposal page
+
+<img src="Images/105-proposal.png" >
 
 The output from the QT-wallet `1c9b485707ddb54d621325483ae5341fdede5f31b6caa5b846d3cdd141703d28`
 needs to be pasted in the proposal page in the field underneath the `Transaction ID:`
+Submit this value and then proceed with the next step.
 
 <img src="Images/105-proposal.png" >
 
-Submit this value and then proceed with the next step.
-
-Go back to your debug console, paste the above in to the command box and it will take you to the last step on the website:
+After pasting in the `transaction id value`, copy the output from the `Submit Proposal` tab on the Proposal page.
+Go back to your QT-wallet console, and paste the new output in the console again. This will generate a `Proposal ID` that is used for voting on the new proposal.
 
 <img src="Images/106-proposal.png" >
 
@@ -80,21 +80,22 @@ Copy the output once again and paste it into your wallet console:
 
 <img src="Images/107-proposal.png" >
 
-`gobject submit 0 1 1495378128 5b5b2270726f706f73616c222c7b22656e645f65706f6368223a2231343936333838313038222c226e616d65223a224d7950726f706f73616c222c227061796d656e745f61646472657373223a2237664456565336446f3352347052545a6d506650694a57755976536d6e4c65793836222c227061796d656e745f616d6f756e74223a22353030222c2273746172745f65706f6368223a2231343935343736373038222c2274797065223a312c2275726c223a22687474703a2f2f7777772e6d796d75652e636f6d2f486f6d652f43726561746550726f706f73616c227d5d5d`
-
-go back to your wallet (debug screen)
-and paste the output of the last screen
-
-`gobject submit 0 1 1495378128 5b5b2270726f706f73616c222c7b22656e645f65706f6368223a2231343936333838313038222c226e616d65223a224d7950726f706f73616c222c227061796d656e745f61646472657373223a22376e454174376a61334153685168723658547546564e6f34326b46706364554e3238222c227061796d656e745f616d6f756e74223a22353030222c2273746172745f65706f6368223a2231343935343736373038222c2274797065223a312c2275726c223a22687474703a2f2f7777772e6d796d75652e636f6d2f486f6d652f43726561746550726f706f73616c227d5d5d 15f807f41c7f4830e742d737a0563be259aa639e864d92c5d020b8a73394d221`
-
 this will give you this
 
-    __a3a20b66f646db23323ded9b6ba06613a6d8f314c995bc73396a0d28de47e535__
+    __ec6156877ffccfc9b5b99101a13c673b9ce856bcd9909a2fec9f2bb2af7a72b8__
 
-now to get other to vote you need to give them the correct command
-to  vote yes
+For the network to vote on your proposal, you need to provide the correct `Proposal ID` commands:
 
-gobject vote-many  a3a20b66f646db23323ded9b6ba06613a6d8f314c995bc73396a0d28de47e535  funding yes
+For yes:
+
+    gobject vote-many ec6156877ffccfc9b5b99101a13c673b9ce856bcd9909a2fec9f2bb2af7a72b8 funding yes
+
+or, no:
+
+    gobject vote-many ec6156877ffccfc9b5b99101a13c673b9ce856bcd9909a2fec9f2bb2af7a72b8 funding no
+
+
+
 now depending on how many masternodes you have  the out will vary
 I am using 2 in this example
 
