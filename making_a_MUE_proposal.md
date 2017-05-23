@@ -48,13 +48,16 @@ Copy the `output` and paste it in the `wallet console`
 
     gobject prepare 0 1 1495374408 5b5b2270726f706f73616c222c7b22656e645f65706f6368223a2231343936333838343138222c226e616d65223a224d7950726f706f73616c222c227061796d656e745f61646472657373223a2237664456565336446f3352347052545a6d506650694a57755976536d6e4c65793836222c227061796d656e745f616d6f756e74223a22353030222c2273746172745f65706f6368223a2231343935343737303138222c2274797065223a312c2275726c223a2268747470733a2f2f7777772e6d796d75652e636f6d227d5d5d
 
-Hit `Enter` and in the console you will get a new output:
-
 <a href="Images/103-proposal.png"><img src="Images/103-proposal.png" ></a>
 
+Hit `Enter` and in the console you will get a new output:
+
+<a href="Images/104-proposal.png"><img src="Images/104-proposal.png" ></a>
 
 and paste that text in the command box and press enter
+
 it will then give you an out put
+<a href="Images/105-proposal.png"><img src="Images/105-proposal.png" ></a>
 
 you will need to keep the f748d08b9ca3d17519a8ed86143a6cfc3c9d4c5f9bdafefc79b739029c5672a4
 for the next step
