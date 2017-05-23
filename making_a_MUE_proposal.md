@@ -28,10 +28,12 @@ So as an example:
 <a href="Images/101-proposal.png"><img src="Images/101-proposal.png" width="400" ></a>
 
 It is easy and pretty straightforward to fill out the form. In the fields,
-`Payment Amount:` this is how much you want to be paid on each *superblock*
-`Payments:`  This is how many payments you want to receive.
-`Payment Address:` Your address where payment will be sent to
-`Total Amount:` 5000 MUE with a final payment on 6/1/2017
+
+* `Payment Amount:` this is how much you want to be paid on each *superblock*
+* `Payments:`  This is how many payments you want to receive.
+* `Payment Address:` Your address where payment will be sent to
+* `Total Amount:` 5000 MUE with a final payment on 6/1/2017
+
 The output here would lead to the proposal being paid 500 MUE, for 10 times, making a total of 5000 MUE.
 
 So after you have filled in the boxes hit
