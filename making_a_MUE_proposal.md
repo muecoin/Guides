@@ -65,19 +65,20 @@ You can verify that a transaction has been made for the proposal, for the live m
 
 # Proceeding on the Proposal page
 
-The output from the QT-wallet `    f748d08b9ca3d17519a8ed86143a6cfc3c9d4c5f9bdafefc79b739029c5672a4`
+The output from the QT-wallet `f748d08b9ca3d17519a8ed86143a6cfc3c9d4c5f9bdafefc79b739029c5672a4`
 needs to be pasted in the proposal page underneath the big gray box:
 
 <img src="Images/105-proposal.png" >
 
 Submit this test key and then proceed with the next step
 
-
-go back to your debug console
-and past the above in to the command box and it will take you to the last step on the website
+Go back to your debug console, paste the above in to the command box and it will take you to the last step on the website:
 
 <img src="Images/106-proposal.png" >
 
+Copy the output once again and paste it into your wallet console:
+
+<img src="Images/107-proposal.png" >
 
 gobject submit 0 1 1495378128 5b5b2270726f706f73616c222c7b22656e645f65706f6368223a2231343936333838313038222c226e616d65223a224d7950726f706f73616c222c227061796d656e745f61646472657373223a2237664456565336446f3352347052545a6d506650694a57755976536d6e4c65793836222c227061796d656e745f616d6f756e74223a22353030222c2273746172745f65706f6368223a2231343935343736373038222c2274797065223a312c2275726c223a22687474703a2f2f7777772e6d796d75652e636f6d2f486f6d652f43726561746550726f706f73616c227d5d5d
 
