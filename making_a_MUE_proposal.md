@@ -10,7 +10,7 @@ Create an account and make sure to setup two-factor authentication, 2fa, for you
 Next, please go to the proposal page; https://www.mymue.com/Home/CreateProposal
 where we will start by filling in the requested fields and start generating a proposal for the masternode network.
 
-<a href="Images/100-proposal.png"><img src="Images/100-proposal.png" ></a>
+<img src="Images/100-proposal.png" >
 
 You will need to fill in
 
@@ -25,7 +25,7 @@ And select
 
 So as an example:
 
-<a href="Images/101-proposal.png"><img src="Images/101-proposal.png" ></a>
+<img src="Images/101-proposal.png" >
 
 It is easy and pretty straightforward to fill out the form. In the fields,
 
@@ -37,7 +37,7 @@ It is easy and pretty straightforward to fill out the form. In the fields,
 The output here would lead to the proposal being paid 500 MUE, for 10 times, making a total of 5000 MUE.
 
 So after you have filled in the boxes hit
-<a href="Images/102-proposal.png"><img src="Images/102-proposal.png" ></a>
+<img src="Images/102-proposal.png" >
 
 And it will take you to the next page, and the next step
 
@@ -47,19 +47,21 @@ The next step is to paste the outputs from the proposal page into the console of
 
 Copy the `output` and paste it in the `wallet console`
 
-<img src="Images/103-proposal.png" ></a>
+<img src="Images/103-proposal.png" >
 
 Hit `Enter` and in the console you will get a new output:
 
-<img src="Images/104-proposal.png" ></a>
-
-
+<img src="Images/104-proposal.png" >
 
 it will then give you an output
-<a href="Images/105-proposal.png"><img src="Images/105-proposal.png" ></a>
 
-you will need to keep the f748d08b9ca3d17519a8ed86143a6cfc3c9d4c5f9bdafefc79b739029c5672a4
-for the next step
+<img src="Images/105-proposal.png" >
+
+you will need to keep the output:    
+
+  f748d08b9ca3d17519a8ed86143a6cfc3c9d4c5f9bdafefc79b739029c5672a4
+
+for the next step back on the proposal page.
 
 
 
