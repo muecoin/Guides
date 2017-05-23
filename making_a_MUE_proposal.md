@@ -70,7 +70,7 @@ needs to be pasted in the proposal page underneath the big gray box:
 
 <img src="Images/105-proposal.png" >
 
-Submit this test key and then proceed with the next step
+Submit this value and then proceed with the next step.
 
 Go back to your debug console, paste the above in to the command box and it will take you to the last step on the website:
 
