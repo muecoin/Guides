@@ -114,7 +114,7 @@ now depending on how many masternodes you have the out will vary. Here is the ou
 
 To check how your proposal is doing you can check it with this command
 
-gobject get ec6156877ffccfc9b5b99101a13c673b9ce856bcd9909a2fec9f2bb2af7a72b8
+    gobject get ec6156877ffccfc9b5b99101a13c673b9ce856bcd9909a2fec9f2bb2af7a72b8
 
 
     {
