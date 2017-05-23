@@ -69,8 +69,6 @@ The output from the QT-wallet `1c9b485707ddb54d621325483ae5341fdede5f31b6caa5b84
 needs to be pasted in the proposal page in the field underneath the `Transaction ID:`
 Submit this value and then proceed with the next step.
 
-<img src="Images/105-proposal.png" >
-
 After pasting in the `transaction id value`, copy the output from the `Submit Proposal` tab on the Proposal page.
 Go back to your QT-wallet console, and paste the new output in the console again. This will generate a `Proposal ID` that is used for voting on the new proposal.
 
