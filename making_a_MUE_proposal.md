@@ -49,13 +49,13 @@ Copy the `output` and paste it in the `wallet console`
 
 <img src="Images/103-proposal.png" >
 
-Hit `Enter` and in the console you will get a new output, that we will need for the next step:
-
 <img src="Images/104-proposal.png" >
+
+Hit `Enter` and in the console you will get a new output, that we will need for the next step:
 
 The output in this example:    
 
-  f748d08b9ca3d17519a8ed86143a6cfc3c9d4c5f9bdafefc79b739029c5672a4
+  __1c9b485707ddb54d621325483ae5341fdede5f31b6caa5b846d3cdd141703d28__
 
 will be needed for the next step back on the proposal page.
 
@@ -65,8 +65,8 @@ You can verify that a transaction has been made for the proposal, for the live m
 
 # Proceeding on the Proposal page
 
-The output from the QT-wallet `f748d08b9ca3d17519a8ed86143a6cfc3c9d4c5f9bdafefc79b739029c5672a4`
-needs to be pasted in the proposal page underneath the big gray box:
+The output from the QT-wallet `1c9b485707ddb54d621325483ae5341fdede5f31b6caa5b846d3cdd141703d28`
+needs to be pasted in the proposal page in the field underneath the `Transaction ID:`
 
 <img src="Images/105-proposal.png" >
 
