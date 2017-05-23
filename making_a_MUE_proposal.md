@@ -94,8 +94,7 @@ or, no:
 
 
 
-now depending on how many masternodes you have  the out will vary
-I am using 2 in this example
+now depending on how many masternodes you have the out will vary. Here is the output for a 2 masternode setup:
 
 {
   "overall": "Voted successfully 2 time(s) and failed 0 time(s).",
@@ -109,87 +108,50 @@ I am using 2 in this example
   }
 }
 
-so with 10 masternodes  I would get this out put
+--------------------------------------------------------------
 
-gobject vote-many  a3a20b66f646db23323ded9b6ba06613a6d8f314c995bc73396a0d28de47e535  funding yes
+# Check the Proposal status
 
-{
-  "overall": "Voted successfully 10 time(s) and failed 0 time(s).",
-  "detail": {
-    "MN1": {
-      "result": "success"
-    },
-    "MN2": {
-      "result": "success"
-    },
-    "MN3": {
-      "result": "success"
-    },
-    "MN4": {
-      "result": "success"
-    },
-    "MN5": {
-      "result": "success"
-    },
-    "MN6": {
-      "result": "success"
-    },
-    "MN7": {
-      "result": "success"
-    },
-    "MN8": {
-      "result": "success"
-    },
-    "MN9": {
-      "result": "success"
-    },
-    "MN10": {
-      "result": "success"
+To check how your proposal is doing you can check it with this command
+
+gobject get ec6156877ffccfc9b5b99101a13c673b9ce856bcd9909a2fec9f2bb2af7a72b8
+
+
+    {
+      "DataHex": "5b5b2270726f706f73616c222c7b22656e645f65706f6368223a2231343936353733363535222c226e616d65223a224d795f4d55455f50726f706f73616c222c227061796d656e745f61646472657373223a22376270427055796938664a594d5673464672504e6141664e69564533336470325571222c227061796d656e745f616d6f756e74223a22313030222c2273746172745f65706f6368223a2231343935363632323535222c2274797065223a312c2275726c223a22687474703a2f2f666f72756d2e70726f706f73616c74616c6b2e6f7267227d5d5d",
+      "DataString": "[[\"proposal\",{\"end_epoch\":\"1496573655\",\"name\":\"My_MUE_Proposal\",\"payment_address\":\"7bpBpUyi8fJYMVsFFrPNaAfNiVE33dp2Uq\",\"payment_amount\":\"100\",\"start_epoch\":\"1495662255\",\"type\":1,\"url\":\"http://forum.proposaltalk.org\"}]]",
+      "Hash": "ec6156877ffccfc9b5b99101a13c673b9ce856bcd9909a2fec9f2bb2af7a72b8",
+      "CollateralHash": "1c9b485707ddb54d621325483ae5341fdede5f31b6caa5b846d3cdd141703d28",
+      "ObjectType": 1,
+      "CreationTime": 1495543525,
+      "FundingResult": {
+        "AbsoluteYesCount": 3,
+        "YesCount": 3,
+        "NoCount": 0,
+        "AbstainCount": 0
+      },
+      "ValidResult": {
+        "AbsoluteYesCount": 0,
+        "YesCount": 0,
+        "NoCount": 0,
+        "AbstainCount": 0
+      },
+      "DeleteResult": {
+        "AbsoluteYesCount": 0,
+        "YesCount": 0,
+        "NoCount": 0,
+        "AbstainCount": 0
+      },
+      "EndorsedResult": {
+        "AbsoluteYesCount": 0,
+        "YesCount": 0,
+        "NoCount": 0,
+        "AbstainCount": 0
+      },
+      "fLocalValidity": true,
+      "IsValidReason": "",
+      "fCachedValid": true,
+      "fCachedFunding": false,
+      "fCachedDelete": false,
+      "fCachedEndorsed": false
     }
-  }
-}
-
-
-to check how your proposal is doing you can check it with this command
-
-
-gobject get a3a20b66f646db23323ded9b6ba06613a6d8f314c995bc73396a0d28de47e535
-
-{
-  "DataHex": "5b5b2270726f706f73616c222c7b22656e645f65706f6368223a2231343936333838313038222c226e616d65223a224d7950726f706f73616c222c227061796d656e745f61646472657373223a22376e454174376a61334153685168723658547546564e6f34326b46706364554e3238222c227061796d656e745f616d6f756e74223a22353030222c2273746172745f65706f6368223a2231343935343736373038222c2274797065223a312c2275726c223a22687474703a2f2f7777772e6d796d75652e636f6d2f486f6d652f43726561746550726f706f73616c227d5d5d",
-  "DataString": "[[\"proposal\",{\"end_epoch\":\"1496388108\",\"name\":\"MyProposal\",\"payment_address\":\"7nEAt7ja3AShQhr6XTuFVNo42kFpcdUN28\",\"payment_amount\":\"500\",\"start_epoch\":\"1495476708\",\"type\":1,\"url\":\"https://www.mymue.com/Home/CreateProposal\"}]]",
-  "Hash": "a3a20b66f646db23323ded9b6ba06613a6d8f314c995bc73396a0d28de47e535",
-  "CollateralHash": "15f807f41c7f4830e742d737a0563be259aa639e864d92c5d020b8a73394d221",
-  "ObjectType": 1,
-  "CreationTime": 1495378128,
-  "FundingResult": {
-    "AbsoluteYesCount": 12,
-    "YesCount": 12,
-    "NoCount": 0,
-    "AbstainCount": 0
-  },
-  "ValidResult": {
-    "AbsoluteYesCount": 0,
-    "YesCount": 0,
-    "NoCount": 0,
-    "AbstainCount": 0
-  },
-  "DeleteResult": {
-    "AbsoluteYesCount": 0,
-    "YesCount": 0,
-    "NoCount": 0,
-    "AbstainCount": 0
-  },
-  "EndorsedResult": {
-    "AbsoluteYesCount": 0,
-    "YesCount": 0,
-    "NoCount": 0,
-    "AbstainCount": 0
-  },
-  "fLocalValidity": true,
-  "IsValidReason": "",
-  "fCachedValid": true,
-  "fCachedFunding": true,
-  "fCachedDelete": false,
-  "fCachedEndorsed": false
-}
