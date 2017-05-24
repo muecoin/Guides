@@ -94,19 +94,22 @@ or, no:
 
 
 
-now depending on how many masternodes you have the out will vary. Here is the output for a 2 masternode setup:
+now depending on how many masternodes you have the out will vary. Here is the output for a 3 masternode setup:
 
-{
-  "overall": "Voted successfully 2 time(s) and failed 0 time(s).",
-  "detail": {
-    "MN3": {
-      "result": "success"
-    },
-    "MN4": {
-      "result": "success"
+    {
+      "overall": "Voted successfully 3 time(s) and failed 0 time(s).",
+      "detail": {
+        "MN1": {
+          "result": "success"
+        },
+        "MN2": {
+          "result": "success"
+        },
+        "MN3": {
+          "result": "success"
+        }
+      }
     }
-  }
-}
 
 --------------------------------------------------------------
 

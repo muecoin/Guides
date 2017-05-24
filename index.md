@@ -29,3 +29,7 @@
 3. [Building the MUE daemon on a CentOS7 server](https://github.com/muecoin/Guides/blob/master/Build_CentOS_7.md) - Build and run the mued (MUE daemon) on a CentOS 7 host
 
 ---------------------------------------
+
+# Operational Documentation
+
+1. [Making a budget proposal to the MonetaryUnit Treasury Network](https://github.com/muecoin/Guides/blob/master/making_a_MUE_proposal.md) - This step by step guide shows how to make a proposal to the MonetaryUnit treasury for funding of project and services.
