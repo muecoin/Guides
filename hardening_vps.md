@@ -29,3 +29,14 @@ In order to keep the admin's sanity, Fail2ban will stop the attackers and keep t
 
 Please check the following guide for more information on how to install and setup Fail2ban on various Linux systems:
 https://www.linode.com/docs/security/using-fail2ban-for-security
+
+
+---------------------------------------------------------
+
+## Install and configure a Firewall
+
+For a Ubuntu host, you may use the UFW firewall, see the guide here:
+[Setting up UFW on a Ubuntu server](https://github.com/muecoin/Guides/blob/master/ufw-firewall.md)
+
+Alternatively, for any kind of VPS on Digital Ocean, it is now possible to put up a basic firewall from the Digital Ocean admin console. It allows all users to have a basic firewall, not specific to any distribution, but part of the Digital Ocean infrastructure itself:
+[Setting up a simple Firewall on Digital Ocean](https://github.com/muecoin/Guides/blob/master/DO_general_firewall.md)

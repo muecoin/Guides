@@ -1,5 +1,5 @@
 #  Setting up a simple firewall
-Additional steps to improve the hot node is to install a service that restarts your masternode in case it crashes, and a firewall to help the networking performance and reduce the risk of malicious network activities.
+Additional steps to improve the hot node is to install a service that restarts your masternode in case it crashes, and a firewall to help the networking performance and reduce the risk of malicious network activities. This small guide is for a Ubuntu server setup.
 
 Let's get a simple firewall up and running:
 
