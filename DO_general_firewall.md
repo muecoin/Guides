@@ -6,4 +6,4 @@ Rather than rewriting the Digital Ocean guide, please see the link here how to s
 
 https://www.digitalocean.com/community/tutorials/how-to-create-your-first-digitalocean-cloud-firewall
 
-Note that for a MonetaryUnit masternode, the ports 22 and 29888 will be required to be open for traffic on TCP.
+For a MonetaryUnit masternode, the ports 22 and 29888 will be required to be open for traffic on TCP.
