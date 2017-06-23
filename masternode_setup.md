@@ -195,12 +195,13 @@ If we want to build the daemon instead, we have to setup the building environmen
 Please note that compiling the software requires `more than 1GB of RAM memory` for the VPS. Please setup a `swap file` or use a VPS instance with at least `2GB of RAM memory`.
 
 	sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils -y
-	sudo apt-get install libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev -y
-	sudo apt-get install libboost-all-dev -y
 	sudo add-apt-repository ppa:bitcoin/bitcoin -y
 	sudo apt-get update -y
+	sudo apt-get install libboost-all-dev -y
 	sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
 
+	#sudo apt-get install libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev -y
+	
 	cd Mue
 	./autogen.sh && ./configure --with-incompatible-bdb --without-miniupnpc && make
 	cd src
