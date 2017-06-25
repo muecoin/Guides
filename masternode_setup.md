@@ -67,7 +67,7 @@ The next command provides us with a key for the masternode collateral. Please ty
 
 and hit enter. The output will look something like this:
 
-	7qm78BkY2LvriqGVTwRoXJWRTZkm9yH79L2FbRTp9NrQaTKRcGZ
+	5FcUWAuUBe82lMMwyE9sZMMYPtVfK9cY57uKe2uD7EWnsyy3gWn
 
 <a href="Images/12-masternode-genkey.PNG"><img src="Images/12-masternode-genkey.PNG" width="400" ></a>
 
