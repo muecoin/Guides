@@ -256,7 +256,7 @@ The masternode.conf file needs a few values;
 	Format: alias IP:port masternodeprivkey collateral_output_txid collateral_output_index
 
 * the `alias` is a name we assign to our masternode, like `MN1`
-* `IP:port` are the external ip and node for the hot node on the VPS. The port for MUE mainnet is `29988`
+* `IP:port` are the external ip and node for the hot node on the VPS. The port for MUE mainnet is `19683`
 * `masternodeprivkey` is the output from the `masternode genkey` command earlier, eg `7qm78BkY2LvriqGVTwRoXJWRTZkm9yH79L2FbRTp9NrQaTKRcGZ`
 * for the `collateral_output_txid` and `collateral_output_index` we need to issue a command in the cold wallet console.
 
@@ -275,7 +275,7 @@ which are the two values that we are looking for. The `collateral_output_index` 
 
 Put these values in the `masternode.conf` all on one single line, save the file and restart the wallet.
 
-	MN1 123.45.56.78:29988 7qm78BkY2LvriqGVTwRoXJWRTZkm9yH79L2FbRTp9NrQaTKRcGZ f9a2013b00205098ad8b192d9ac68e7d55e47eb80c860972a404a51bfbc100ac 1
+	MN1 123.45.56.78:19683 7qm78BkY2LvriqGVTwRoXJWRTZkm9yH79L2FbRTp9NrQaTKRcGZ f9a2013b00205098ad8b192d9ac68e7d55e47eb80c860972a404a51bfbc100ac 1
 
 When the cold wallet starts up again, check the masternode tab, and the masternode should be visible in the list of your own masternodes.
 
