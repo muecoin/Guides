@@ -202,7 +202,9 @@ Please note that compiling the software requires `more than 1GB of RAM memory` f
 
 	#sudo apt-get install libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev -y
 	
-	cd Mue
+	git clone https://github.com/muecoin/MUECore.git
+	
+	cd MUECore-master
 	./autogen.sh && ./configure --with-incompatible-bdb --without-miniupnpc && make
 	cd src
 	cp mued /home/mue/bin/
