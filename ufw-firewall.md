@@ -13,7 +13,7 @@ Please enter the firewall rules as shown below:
 
 	sudo ufw allow ssh/tcp
 	sudo ufw limit ssh/tcp
-	sudo ufw allow 29988/tcp
+	sudo ufw allow 19683/tcp
 	sudo ufw logging on
 	sudo ufw enable
 
@@ -27,8 +27,8 @@ Verify the firewall setting with:
 	To                         Action      From
 	--                         ------      ----
 	22/tcp                     LIMIT       Anywhere
-	29988/tcp                  ALLOW       Anywhere
+	19683/tcp                  ALLOW       Anywhere
 	22/tcp (v6)                LIMIT       Anywhere (v6)
-	29988/tcp (v6)             ALLOW       Anywhere (v6)
+	19683/tcp (v6)             ALLOW       Anywhere (v6)
 
 Excellent, the firewall is all set!
