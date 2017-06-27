@@ -204,7 +204,7 @@ Before proceeding it is best to log off, and log in to the VPS again. This time 
 If we want to build the daemon instead, we have to setup the building environment before compiling the source:
 Please note that compiling the software requires `more than 1GB of RAM memory` for the VPS. Please setup a `swap file` or use a VPS instance with at least `2GB of RAM memory`.
 
-	sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils -y
+	sudo apt-get git install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils -y
 	sudo add-apt-repository ppa:bitcoin/bitcoin -y
 	sudo apt-get update -y
 	sudo apt-get install libboost-all-dev -y
@@ -214,7 +214,7 @@ Please note that compiling the software requires `more than 1GB of RAM memory` f
 	
 	git clone https://github.com/muecoin/MUECore.git
 	
-	cd MUECore-master
+	cd MUECore
 	./autogen.sh && ./configure --with-incompatible-bdb --without-miniupnpc && make
 	cd src
 	cp mued /home/mue/bin/
