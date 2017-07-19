@@ -1,16 +1,9 @@
 # MonetaryUnit Masternode Setup
 
 	A MUE guide for setting up and hosting a masternode on a VPS (virtual private server)
-	Version 1.0 - 2017-06-27
-----------------------------------------------------
-PLEASE NOTE: WALLETS WILL BE PUBLISHED TO GITHUB, FOR NOW PLEASE DOWNLOAD BINARIES FROM https://drive.google.com/drive/folders/0B7NWoqhWP7wGSWMyRW5xNUpDREE
-
-OR BUILD FROM SOURCE:
-
-https://github.com/muecoin/MUECore
+	Version 1.0.2 - 2017-07-20
 
 ----------------------------------------------------
-
 
 
 The MUE network has switched to a Dash-X11 code base, and as such it inherits the strengths that a 2-tier network brings, in terms of a strong masternode network for additional functions and security of the network.
@@ -42,7 +35,7 @@ Let's start by getting the wallet for your platform.
 Please go the website: https://github.com/muecoin/MUECore/releases and select the wallet that matches your computer. For this tutorial we will be using a 64-bit Windows machine for the cold storage wallet and a Linux VPS for the hot masternode daemon.
 
 #### Install wallet on local machine
-Download the Windows client, monetaryunit-1.0.10.8-win64-setup.exe. You may check the files with the provided checksums, verify that the files downloaded correctly, and if they are different, please re-download the client again.
+Download the Windows client, muecore-v1.0.2-win64.exe You may check the files with the provided checksums, verify that the files downloaded correctly, and if they are different, please re-download the client again.
 
 #### Install the client, and then start it.
 You may be prompted by the Windows Firewall to allow the wallet to accept connections on private and open networks. Please select both network boxes and accept. Now, with the client open, let it sync to the network wait for the blockchain to be downloaded. The wallet will attempt to synchronize with the network, no manual actions should be needed at this point.
