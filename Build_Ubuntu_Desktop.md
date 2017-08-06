@@ -20,7 +20,7 @@ Open up the terminal and follow the commands below. This sets up the building en
 ### Download the MUE source code
 
     cd ~
-    git clone https://github.com/monetaryunit/MUE-X11/mue.git
+    git clone https://github.com/muecoin/MUECore.git
 
 ### Configure and compile the MUE wallet
 
