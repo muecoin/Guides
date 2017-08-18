@@ -173,14 +173,16 @@ Select `y` to proceed with any updates and wait for the VPS to complete the task
 
 Next, download the Linux client, and unpack the compressed files:
 
-	wget https://github.com/muecoin/MUECore/releases/download/v1.0.2/muecore-v1.0.2-Ubuntu.16.04.2.LTS.zip
-	unzip muecore-v1.0.2-Ubuntu.16.04.2.LTS.zip
+* Please note please build from source as the Linux binaries are currently not available *
+
+	wget https://github.com/muecoin/MUECore/archive/v1.0.3.2.tar.gz
+	tar -zxvf v1.0.3.2.tar.gz
 
 We need to copy the binaries to a local folder
 
 	mkdir /home/mue/bin
 	mkdir /home/mue/.muecore
-	cp /home/mue/muecore-v1.0.2-Ubuntu\ 16.04.2\ LTS/mue* /home/mue/bin/
+	cp /home/mue/muecore/mue* /home/mue/bin/
 
 and we will make sure they are executable
 
