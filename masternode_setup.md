@@ -173,7 +173,7 @@ Select `y` to proceed with any updates and wait for the VPS to complete the task
 
 Next, download the Linux client, and unpack the compressed files:
 
-* Please note please build from source as the Linux binaries are currently not available *
+* Please note please build from source as the Linux binaries are currently not available
 
 	wget https://github.com/muecoin/MUECore/archive/v1.0.3.2.tar.gz
 	tar -zxvf v1.0.3.2.tar.gz
