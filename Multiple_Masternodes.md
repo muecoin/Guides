@@ -9,7 +9,7 @@ for getting a masternode up and running.
 
 To add more masternodes, make a new `500 000 MUE` collateral transaction in the cold storage MUE wallet. Make sure that the older 500 000 MUE transaction(s) are locked to avoid breaking the active masternode(s). Once the new transaction has been made, lock it in the cold wallet by right-clicking on it and selecting `Lock unspent`.
 
-Check the output of `masternode genkey` and `masternode outputs`. The new masternode output will be the new collateral transaction for the new masternode. Compare with what transactions are already present in the masternode.conf file. The new transactions outputs from the `masternode outputs`command are the new transacgtion details that need to be added to the masternode.conf file.
+Check the output of `masternode genkey` and `masternode outputs`. The new masternode output will be the new collateral transaction for the new masternode. Compare with what transactions are already present in the masternode.conf file. The new transactions outputs from the `masternode outputs`command are the new transaction details that need to be added to the masternode.conf file.
 
 Add these values along with the VPS ip-number to the local cold wallet masternode.conf file, one row per masternode.
 it shall look something like this:
