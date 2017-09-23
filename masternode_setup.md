@@ -28,6 +28,7 @@ The minimal requirements for running a masternode are:
 
 Better hardware can be used to help the masternode performance, but using less than the required minimal hardware can make the masternode unstable and cause the node to crash or perform poorly. By doing so, the node can get kicked off the masternode lists, causing the masternode to lose payments.
 
+Uses who are looking at building the hot wallet from source, please consider getting a VPS with `2 GB` of ram, or setup a swap file to allow the building to be successful. Using 1 GB of ram will likely cause memory errors and crashes during compiling,
 
 ### Setting up a local wallet for cold storage and a hot wallet (masternode) on a VPS
 
