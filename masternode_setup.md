@@ -177,10 +177,8 @@ Select `y` to proceed with any updates and wait for the VPS to complete the task
 
 Next, download the Linux client, and unpack the compressed files:
 
-* Please note: Please build from source as the Linux binaries are currently not available
-
-		wget https://github.com/muecoin/MUECore/releases/download/v1.0.3.2/Ubuntu16.04.tgz
-		tar -zxvf Ubuntu16.04.tgz
+	wget https://github.com/muecoin/MUECore/releases/download/v1.0.3.2/Ubuntu16.04.tgz
+	tar -zxvf Ubuntu16.04.tgz
 
 We need to copy the binaries to a folder in our path for easier access
 
@@ -188,7 +186,7 @@ We need to copy the binaries to a folder in our path for easier access
 	sudo cp Ubuntu16.04/mued /usr/local/bin/
 	sudo cp Ubuntu16.04/mue-tx /usr/local/bin/
 	
-Please note that we do not need to copy the `mue-qt` file, as it is the graphical wallet interface, but it will not work on our server.
+Please note that we do not need to copy the `mue-qt` file, as it is the graphical wallet interface. It will not work on our server.
 	
 -------------------------------------------------------------------
 If we want to build the daemon instead, we have to setup the building environment before compiling the source:
@@ -205,11 +203,8 @@ Please note that compiling the software requires `more than 1GB of RAM memory` f
 	git clone https://github.com/muecoin/MUECore.git
 	
 	cd MUECore
-	./autogen.sh && ./configure --with-incompatible-bdb --without-miniupnpc && make
-	cd src
-	cp mued /home/mue/bin/
-	cp mue-cli /home/mue/bin/
-	cp mue-tx /home/mue/bin/
+	./autogen.sh && ./configure --with-incompatible-bdb --without-miniupnpc && make && make install
+	
 --------------------------------------------------------------------
 
 Open putty again, and connect to your VPS. When prompted log in as user `mue`
