@@ -1,22 +1,23 @@
 # MonetaryUnit Masternode Setup
 
 	A MUE guide for setting up and hosting a masternode on a VPS (virtual private server)
-	Version 1.0.2 - 2017-07-20
+	Version 1.0.3 - 2017-10-03
+
+	Last changes: - Changed install path to harmonize with upcoming releases
 
 ----------------------------------------------------
-
 
 The MUE network has switched to a Dash-X11 code base, and as such it inherits the strengths that a 2-tier network brings, in terms of a strong masternode network for additional functions and security of the network.
 
 The masternodes perform tasks for the MUE network. These are for instance InstantSend, PrivateSend, storage of the blockchain and governance capabilities. As a reward for running these functions, the masternodes are paid out a part of the block reward for their services. The block reward is 40 MUE per block and each block occurs on average every 40 seconds, thus growing the supply 1 MUE every second.
 
-The block reward is split in three providing 45% to the miner who solved the block, 45% to the masternode for it’s services and the remaining 10% going to the continuous funding of the MUE project. The masternode reward is 45% * 40 MUE = 18 MUE per block.
+The block reward is split in three, providing 45% to the miner who solved the block, 45% to the masternode for it’s services and the remaining 10% going to the continuous funding of the MUE project. The masternode reward is 45% * 40 MUE = 18 MUE per block.
 
 ## How to setup a Virtual Private Server (VPS) and run a MUE masternode.
 
 For starters, the reason for running a dedicated VPS instead of hosting one’s masternode on a home internet connection are several. The masternode must be up and running all the time to provide services for the network. Should the connection go down, or the node performs badly, the rest of the network will be unhappy with the services and the masternode loses payments. Many home internet providers are unhappy if the owner runs a server at home and may shut down access to the masternode.
 
-A typical masternode uses around 500 GB or more of traffic per month. Home internet users with traffic caps will have a hard time running a masternode if the bandwidth is limited. It is especially important to have a high speed connection as the masternode is serving up the blockchain. Additional feature to the network will likely require a high speed connection as well.
+A typical masternode uses around 500 GB or more of traffic per month. Home internet users with traffic caps will have a hard time running a masternode if the bandwidth is limited. It is especially important to have a high speed connection as the masternode is serving up the blockchain. Additional features to the network will likely require a high speed connection as well.
 
 ### VPS requirements for a masternode
 The minimal requirements for running a masternode are:
@@ -28,12 +29,12 @@ The minimal requirements for running a masternode are:
 
 Better hardware can be used to help the masternode performance, but using less than the required minimal hardware can make the masternode unstable and cause the node to crash or perform poorly. By doing so, the node can get kicked off the masternode lists, causing the masternode to lose payments.
 
-Uses who are looking at building the hot wallet from source, please consider getting a VPS with `2 GB` of ram, or setup a swap file to allow the building to be successful. Using 1 GB of ram will likely cause memory errors and crashes during compiling,
+Uses who are looking at building the hot wallet from source, please consider getting a VPS with `2 GB` of ram, or setup a swap file to allow the building to be successful. Using 1 GB of ram will likely cause memory errors and crashes during compiling.
 
 ### Setting up a local wallet for cold storage and a hot wallet (masternode) on a VPS
 
 Let's start by getting the wallet for your platform.
-Please go the website: https://github.com/muecoin/MUECore/releases and select the wallet that matches your computer. For this tutorial we will be using a 64-bit Windows machine for the cold storage wallet and a Linux VPS for the hot masternode daemon.
+Please go the website: https://github.com/muecoin/MUECore/releases/latest and select the wallet that matches your computer. For this tutorial we will be using a 64-bit Windows machine for the cold storage wallet and a Ubuntu Linux VPS for the hot masternode daemon.
 
 #### Install wallet on local machine
 Download the Windows client, muecore-v1.0.2-win64.exe You may check the files with the provided checksums, verify that the files downloaded correctly, and if they are different, please re-download the client again.
