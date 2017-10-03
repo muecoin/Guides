@@ -114,6 +114,8 @@ Sign up for a new account, log in and click `New Droplet`
 For this guide we are looking to start a `16.04 Ubuntu` version of Linux as the host:
 Select the `1 GB / 1 CPU, 30 GB SSD Disk, 2 TB Transfer` version. The $10 USD credit provided via the promotional code will give most of the first month hosting for free! Chose a location, it doesn't really matter, but it might be better to chose a location closer to yourself for the remote management.
 
+If you would rather like to build the VPS hot node daemon from source instead, consider getting a VPS that has 2GB of ram.
+
 -----------------------------------------------------------
 
 #### Optional server setups
@@ -177,26 +179,17 @@ Next, download the Linux client, and unpack the compressed files:
 
 * Please note: Please build from source as the Linux binaries are currently not available
 
-		wget https://github.com/muecoin/MUECore/archive/v1.0.3.2.tar.gz
-		tar -zxvf v1.0.3.2.tar.gz
+		wget https://github.com/muecoin/MUECore/releases/download/v1.0.3.2/Ubuntu16.04.tgz
+		tar -zxvf Ubuntu16.04.tgz
 
-We need to copy the binaries to a local folder
+We need to copy the binaries to a folder in our path for easier access
 
-	mkdir /home/mue/bin
-	mkdir /home/mue/.muecore
-	cp /home/mue/muecore/mue* /home/mue/bin/
-
-and we will make sure they are executable
-
-	chmod 755 /home/mue/bin/mue*
-
-We'll make sure that the binaries are found in the mue users path:
-
-	export PATH=$PATH:$HOME/bin
-
-this setting will not take place until the user mue has logged in again.
-Before proceeding it is best to log off, and log in to the VPS again. This time though, we can log in as user `mue` with that users password that was setup earlier.
-
+	sudo cp Ubuntu16.04/mue-cli /usr/local/bin/
+	sudo cp Ubuntu16.04/mued /usr/local/bin/
+	sudo cp Ubuntu16.04/mue-tx /usr/local/bin/
+	
+Please note that we do not need to copy the `mue-qt` file, as it is the graphical wallet interface, but it will not work on our server.
+	
 -------------------------------------------------------------------
 If we want to build the daemon instead, we have to setup the building environment before compiling the source:
 Please note that compiling the software requires `more than 1GB of RAM memory` for the VPS. Please setup a `swap file` or use a VPS instance with at least `2GB of RAM memory`.
