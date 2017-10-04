@@ -198,8 +198,6 @@ Please note that compiling the software requires `more than 1GB of RAM memory` f
 	sudo apt-get install libboost-all-dev -y
 	sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
 
-	#sudo apt-get install libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev -y
-	
 	git clone https://github.com/muecoin/MUECore.git
 	
 	cd MUECore
