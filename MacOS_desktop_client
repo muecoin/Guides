@@ -1,26 +1,13 @@
-# Building the MonetaryUnit client wallet on Ubuntu Linux 16.04 LTS
+# Running the MonetaryUnit client wallet on MacOS, OSX
 
-If a user does not want to run the provided binaries from the Monetaryunit project, the client wallet can be built on the Ubuntu Linux desktop by following this guide.
+Running the MUE client on MacOS works very well and can be used for every day wallet uses or as an occastional cold wallet.
 
-Open up the terminal and follow the commands below. This sets up the building environment and adds the necessary dependencies for the MUE wallet:
+Please grab the latest MacOS/OSX client form the Monetary Unit code repository: https://github.com/muecoin/MUECore/releases/latest
 
-    sudo apt-get update
-    sudo apt-get upgrade
+### Install the MUE client
 
-    sudo apt-get install build-essential libtool autotools-dev autoconf pkg-config libssl-dev libevent-dev
-    sudo apt-get install libboost-all-dev
-    sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler git
-    sudo apt-get install libqrencode-dev
-    sudo apt-get install libminiupnpc-dev
-    sudo add-apt-repository ppa:bitcoin/bitcoin -y
-    sudo apt-get update -y
-    sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
-
-
-### Download the MUE source code
-
-    cd ~
-    git clone https://github.com/muecoin/MUECore.git
+    Unpack the MacOS wallet, and dubbelclick on the .dmg file.
+    
 
 ### Configure and compile the MUE wallet
 
