@@ -6,21 +6,16 @@ Please grab the latest MacOS/OSX client form the Monetary Unit code repository: 
 
 ### Install the MUE client
 
-    Unpack the MacOS wallet, and dubbelclick on the .dmg file.
+    Unpack the MacOS zip-file, and drag the 'MonetaryUnit-Qt.app' to your /Applications/ folder.
     
 
-### Configure and compile the MUE wallet
+### Start the client
 
-    cd MUECore/
-    ./autogen.sh && ./configure --with-incompatible-bdb --without-miniupnpc && make -j8 && sudo make install
+    Depending on ytour security settings in MacOS, you may see a secuity warning that you cannot run the program due to an untrusted develloper verification.
+    In Finder, go to your 'Applications' and ctrl-click or right-click on the 'MonetaryUnit-QT.app' and choose 'open'. Choose to open the app, and the MonetaryUnit client will launch.    
 
-The value -j8 tells the compiler to use 8 threads for the compiling. If your processor has fewer or more cores, set the value to speed up the compiling, one thread per processor core, eg -j2, -j4, -j16.
 
-### Run the MUE Daemon/QT/Client
 
-    ./src/mued -daemon
-    ./src/mue-qt
-    ./src/mue-cli
 
 <a href="Images/ubuntu-mue-qt.png"><img src="Images/ubuntu-mue-qt.png" width="400" ></a>
 
