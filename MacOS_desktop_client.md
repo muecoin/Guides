@@ -20,7 +20,7 @@ In `Finder`, go to your `Applications` and `ctrl-click` or `right-click` on the 
 By default, the blockchain and wallet files are stored in `~/Library/Application Support/MonetaryUnitCore`
 In this foilder, your `wallet.dat` file is located. It is your wallet containing your funds. Please keep this file safe and ensure it is backed up properly and securely!
 
-To go to this folder in `Finder`, open the Finder file explorer, and in the top menu, click on `View`. Now press the `Option` key, and the `Library` foloder will appear in the list. Just click on it and it will open in Finder.
+To go to this folder in `Finder`, open the Finder file explorer, and in the top menu, click on `View`. Now press the `Option` key, and the `Library` folder will appear in the list. Just click on it and it will open in Finder.
 
 Browse to your `Application Support` folder, and there you will find the `MonetaryUnitCore` folder with your `wallet.dat`file and other important `mue.conf` and `masternode.conf` files.
 
