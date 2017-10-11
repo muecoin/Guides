@@ -15,9 +15,9 @@ Unpack the MacOS zip-file, and drag the 'MonetaryUnit-Qt.app' to your /Applicati
 
 Depending on ytour security settings in MacOS, you may see a secuity warning that you cannot run the program due to an untrusted develloper verification.
 
-In Finder, go to your 'Applications' and ctrl-click or right-click on the 'MonetaryUnit-QT.app' and choose 'open'. Choose to open the app, and the MonetaryUnit client will launch.    
+In `Finder`, go to your `Applications` and `ctrl-click` or `right-click` on the `MonetaryUnit-QT.app` and choose `open`. Choose to open the app, and the MonetaryUnit client will launch.    
 
-By default, the blockchain and wallet files are stored in '~/Library>Application Support>MonetaryUnitCore'
+By default, the blockchain and wallet files are stored in `~/Library>Application Support>MonetaryUnitCore`
 
 
 <a href="Images/ubuntu-mue-qt.png"><img src="Images/ubuntu-mue-qt.png" width="400" ></a>
