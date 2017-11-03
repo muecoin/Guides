@@ -56,7 +56,8 @@ Copy the binaries as root
 
     su 
     cp mued /usr/local/bin/
-    cp mue-* /usr/local/bin/
+    cp mue-cli /usr/local/bin/
+    cp mue-tx /usr/local/bin/
     
 and... lets start the MUE daemon!
 
