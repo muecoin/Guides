@@ -44,7 +44,7 @@ and run the script:
     cd MUECore
     ./build-mued.sh
 
-When the building is complete, the binaries will be in Mue/src/
+When the building is complete, the binaries will be in MUECore/src/
 
 ### Run the daemon
 
