@@ -1,0 +1,6 @@
+sudo apt-get update && sudo apt-get upgrade -y
+wget https://github.com/muecoin/MUE/releases/download/v2.0.2/mon-x86_64-linux-gnu.tar.gz
+tar -zxvf mon-x86_64-linux-gnu.tar.gz
+sudo cp mon/bin/monetaryunit* /usr/local/bin/
+monetaryunitd --daemon
+nano -w .monetaryunit/monetaryunit.conf
