@@ -21,11 +21,18 @@ For starters, the reason for running a dedicated VPS instead of hosting one’s 
 A typical masternode uses around 500 GB or more of traffic per month. Home internet users with traffic caps will have a hard time running a masternode if the bandwidth is limited. It is especially important to have a high speed connection as the masternode is serving up the blockchain. Additional features to the network will likely require a high speed connection as well.
 
 ### VPS requirements for a masternode
-The minimal requirements for running a masternode are:
+The minimal requirements for running a masternode with `prebuilt binaries` are:
 
-	* 1 GB of ram
-	* 1 CPU core
-	* 20 GB of hard drive space
+	* 1 vCPU core
+	* 1 GB of RAM memory
+	* 25 GB of hard drive space
+	* a high speed internet connection and at least a transfer of 500 GB per month.
+	
+For users who would rather buld the monetaryunit binaries themselves, the required VPS are:
+
+	* 1 vCPU core
+	* 2 GB of RAM memory
+	* 25 GB of hard drive space
 	* a high speed internet connection and at least a transfer of 500 GB per month.
 
 Better hardware can be used to help the masternode performance, but using less than the required minimal hardware can make the masternode unstable and cause the node to crash or perform poorly. By doing so, the node can get kicked off the masternode lists, causing the masternode to lose payments.
