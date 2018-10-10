@@ -1,3 +1,5 @@
+# Setting up a Masternode on the update Monetary PoS network
+
 sudo apt-get update && sudo apt-get upgrade -y
 wget https://github.com/muecoin/MUE/releases/download/v2.0.2/mon-x86_64-linux-gnu.tar.gz
 tar -zxvf mon-x86_64-linux-gnu.tar.gz
