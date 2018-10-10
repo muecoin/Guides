@@ -4,7 +4,7 @@
 	Version 2.0.0 - 2018-10-10
 	Version 1.0.3 - 2017-10-03
 
-	Last changes: - New guide overhaul Changed install path to harmonize with upcoming releases
+	Last changes: - New guide overhaul as MUE moves to PoS
 
 ----------------------------------------------------
 
@@ -42,13 +42,15 @@ Users who are looking at building the hot wallet from source, please consider ge
 ### Setting up a local wallet for cold storage and a hot wallet (masternode) on a VPS
 
 Let's start by getting the wallet for your platform.
-Please go the website: https://github.com/muecoin/MUECore/releases/latest and select the wallet that matches your computer. For this tutorial we will be using a 64-bit Windows machine for the cold storage wallet and a Ubuntu Linux VPS for the hot masternode daemon.
+Please go the website: https://github.com/muecoin/MUE/releases/latest and select the wallet that matches your computer. For this tutorial we will be using a 64-bit Windows machine for the cold storage wallet and a Ubuntu Linux VPS for the hot masternode daemon.
 
 #### Install wallet on local machine
-Download the Windows client, muecore-v1.0.2-win64.exe You may check the files with the provided checksums, verify that the files downloaded correctly, and if they are different, please re-download the client again.
+Download the Windows client, `mon-win64-setup-unsigned.exe` You may check the files with the provided checksums, verify that the files downloaded correctly, and if they are different, please re-download the client again.
 
 #### Install the client, and then start it.
 You may be prompted by the Windows Firewall to allow the wallet to accept connections on private and open networks. Please select both network boxes and accept. Now, with the client open, let it sync to the network wait for the blockchain to be downloaded. The wallet will attempt to synchronize with the network, no manual actions should be needed at this point.
+
+However, if the wallet fails to get seed nodes from the monetaryunit network, the user can manually add nodes from the block explorer: https://chainz.cryptoid.info/mue/#!network
 
 <a href="Images/00-mue-wallet-data-dir.PNG"><img src="Images/00-mue-wallet-data-dir.PNG" width="400" ></a>
 <a href="Images/01_mue_wallet_start_screen.PNG"><img src="Images/01_mue_wallet_start_screen.PNG" width="400" ></a>
