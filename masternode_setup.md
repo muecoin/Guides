@@ -1,17 +1,18 @@
 # MonetaryUnit Masternode Setup
 
 	A MUE guide for setting up and hosting a masternode on a VPS (virtual private server)
+	Version 2.0.0 - 2018-10-10
 	Version 1.0.3 - 2017-10-03
 
-	Last changes: - Changed install path to harmonize with upcoming releases
+	Last changes: - New guide overhaul Changed install path to harmonize with upcoming releases
 
 ----------------------------------------------------
 
-The MUE network has switched to a Dash-X11 code base, and as such it inherits the strengths that a 2-tier network brings, in terms of a strong masternode network for additional functions and security of the network.
+The MUE network has now switched to a PivX/Phore Proof of Stake code base, and as such it inherits the strengths that a 2-tier network brings, in terms of a strong masternode network for additional functions and security of the network. This will enable a lower cost of chain security through staking nodes, and furthermore bring a self funding and community governance to the MUE network.
 
-The masternodes perform tasks for the MUE network. These are for instance InstantSend, PrivateSend, storage of the blockchain and governance capabilities. As a reward for running these functions, the masternodes are paid out a part of the block reward for their services. The block reward is 40 MUE per block and each block occurs on average every 40 seconds, thus growing the supply 1 MUE every second.
+The masternodes perform tasks for the MUE network. These are for instance storage of the blockchain and commnuity governance capabilities. As a reward for running these functions, the masternodes are paid out a part of the block reward for their services. The block reward is 40 MUE per block and each block occurs on average every 40 seconds, thus growing the supply of up to 1 MUE every second.
 
-The block reward is split in three, providing 45% to the miner who solved the block, 45% to the masternode for it’s services and the remaining 10% going to the continuous funding of the MUE project. The masternode reward is 45% * 40 MUE = 18 MUE per block.
+The block reward is split in three, providing 45% to the staker who solved the block, 45% to the masternode for it’s services and the remaining 10% going to the continuous funding of the MUE project. The masternode reward is 45% * 40 MUE = 18 MUE per block.
 
 ## How to setup a Virtual Private Server (VPS) and run a MUE masternode.
 
