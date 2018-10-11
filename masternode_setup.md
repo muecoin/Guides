@@ -28,10 +28,10 @@ The minimal requirements for running a masternode with `prebuilt binaries` are:
 	* 25 GB of hard drive space
 	* a high speed internet connection and at least a transfer of 500 GB per month.
 	
-For users who would rather buld the monetaryunit binaries themselves, the required VPS are:
+For users who would rather `build the monetaryunit binaries themselves`, the required VPS proterties are:
 
 	* 1 vCPU core
-	* 2 GB of RAM memory
+	* *2 GB* of RAM memory
 	* 25 GB of hard drive space
 	* a high speed internet connection and at least a transfer of 500 GB per month.
 
