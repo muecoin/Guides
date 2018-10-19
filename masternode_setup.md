@@ -204,17 +204,17 @@ Please note that compiling the software requires `more than 1GB of RAM memory` f
 
 	sudo add-apt-repository universe
 	sudo apt-get update -y
-	sudo apt-get install git build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils -y
-	sudo add-apt-repository ppa:bitcoin/bitcoin -y
-	sudo apt-get update -y
-	sudo apt-get install libboost-all-dev -y
-	sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
+	<!-- sudo apt-get install git build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils -y -->
+	<!-- sudo add-apt-repository ppa:bitcoin/bitcoin -y -->
+	<!-- sudo apt-get update -y -->
+	<!-- sudo apt-get install libboost-all-dev -y -->
+	<!-- sudo apt-get install libdb4.8-dev libdb4.8++-dev -y -->
 
 	git clone https://github.com/muecoin/MUE.git
 	
 	sudo apt-get install build-essential libtool autotools-dev autoconf pkg-config libssl-dev -y
 	sudo apt-get install libprotobuf-dev protobuf-compiler -y
-	cd depends
+	cd MUE/depends/
 	make -j2
 	cd ..
 	./autogen.sh
@@ -222,7 +222,7 @@ Please note that compiling the software requires `more than 1GB of RAM memory` f
 	make -j2
 	
 	cd MUE
-	./autogen.sh && ./configure --with-incompatible-bdb --without-miniupnpc && make && make install
+	./autogen.sh && ./configure --with-incompatible-bdb --without-miniupnpc && make && sudo make install
 	
 --------------------------------------------------------------------
 
