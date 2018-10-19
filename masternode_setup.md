@@ -121,10 +121,10 @@ This guide will use Digital Ocean as a VPS provider, but the reader is free to c
 
 This promotion & referral code `https://m.do.co/c/0c50700df3bf` gives every new user a `$10` value to start using a new VPS. Please feel free to use it if you like.
 Sign up for a new account, log in and click `New Droplet`
-For this guide we are looking to start a `16.04 Ubuntu` version of Linux as the host:
-Select the `1 GB / 1 CPU, 30 GB SSD Disk, 2 TB Transfer` version. The $10 USD credit provided via the promotional code will give most of the first month hosting for free! Chose a location, it doesn't really matter, but it might be better to chose a location closer to yourself for the remote management.
+For this guide we are looking to start a `18.04 Ubuntu` version of Linux as the host:
+Select the `1 vCPU core / 1 GB of RAM memory / 25 GB of hard drive space` version. The $10 USD credit provided via the promotional code will give most of the first month hosting for free! Chose a location, it doesn't really matter, but it might be better to chose a location closer to yourself for the remote management.
 
-If you would rather like to build the VPS hot node daemon from source instead, consider getting a VPS that has 2GB of ram.
+If you would rather like to build the VPS hot node daemon from source instead, consider getting the VPS that has **2GB of ram**.
 
 -----------------------------------------------------------
 
@@ -187,14 +187,14 @@ Select `y` to proceed with any updates and wait for the VPS to complete the task
 
 Next, download the Linux client, and unpack the compressed files:
 
-	wget https://github.com/muecoin/MUECore/releases/download/v1.0.3.2/Ubuntu16.04.tgz
-	tar -zxvf Ubuntu16.04.tgz
+	wget https://github.com/muecoin/MUE/releases/download/v2.0.2/mon-x86_64-linux-gnu.tar.gz
+	tar -zxvf mon-x86_64-linux-gnu.tar.gz
 
 We need to copy the binaries to a folder in our path for easier access
 
-	sudo cp Ubuntu16.04/mue-cli /usr/local/bin/
-	sudo cp Ubuntu16.04/mued /usr/local/bin/
-	sudo cp Ubuntu16.04/mue-tx /usr/local/bin/
+	sudo cp mon/mue-cli /usr/local/bin/
+	sudo cp mon/mued /usr/local/bin/
+	sudo cp mon/mue-tx /usr/local/bin/
 	
 Please note that we do not need to copy the `mue-qt` file, as it is the graphical wallet interface. It will not work on our server.
 	
@@ -202,15 +202,26 @@ Please note that we do not need to copy the `mue-qt` file, as it is the graphica
 If we want to build the daemon instead, we have to setup the building environment before compiling the source:
 Please note that compiling the software requires `more than 1GB of RAM memory` for the VPS. Please setup a `swap file` or use a VPS instance with at least `2GB of RAM memory`.
 
+	sudo add-apt-repository universe
+	sudo apt-get update -y
 	sudo apt-get install git build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils -y
 	sudo add-apt-repository ppa:bitcoin/bitcoin -y
 	sudo apt-get update -y
 	sudo apt-get install libboost-all-dev -y
 	sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
 
-	git clone https://github.com/muecoin/MUECore.git
+	git clone https://github.com/muecoin/MUE.git
 	
-	cd MUECore
+	sudo apt-get install build-essential libtool autotools-dev autoconf pkg-config libssl-dev -y
+	sudo apt-get install libprotobuf-dev protobuf-compiler -y
+	cd depends
+	make -j2
+	cd ..
+	./autogen.sh
+	./configure --prefix=/home/<your_user_name>/MUE/depends/x86_64-unknown-linux-gnu --enable-tests=no
+	make -j2
+	
+	cd MUE
 	./autogen.sh && ./configure --with-incompatible-bdb --without-miniupnpc && make && make install
 	
 --------------------------------------------------------------------
