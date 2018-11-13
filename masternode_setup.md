@@ -217,19 +217,12 @@ Please note that compiling the software requires `more than 1GB of RAM memory` f
 	make -j2 NO_QT=1
 	cd ..
 	./autogen.sh
-	./configure --prefix=/home/<your_user_name>/MUE/depends/x86_64-unknown-linux-gnu --enable-tests=no --with-gui=no
+	./configure --prefix=/home/<your_user_name>/MUE/depends/x86_64-pc-linux-gnu --enable-tests=no --with-gui=no
 	make -j2
-	
-	cd MUE
-	./autogen.sh && ./configure --with-incompatible-bdb --without-miniupnpc && make && sudo make install
+	make install
+	sudo cp depends/x86_64-pc-linux-gnu/bin/monetaryunit* /usr/local/bin/
 	
 --------------------------------------------------------------------
-<!-- sudo apt-get install git build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils -y -->
-<!-- sudo add-apt-repository ppa:bitcoin/bitcoin -y -->
-<!-- sudo apt-get update -y -->
-<!-- sudo apt-get install libboost-all-dev -y -->
-<!-- sudo apt-get install libdb4.8-dev libdb4.8++-dev -y -->
-
 
 Open putty again, and connect to your VPS. When prompted log in as user `mue`
 
