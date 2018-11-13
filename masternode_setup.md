@@ -210,7 +210,7 @@ Please note that compiling the software requires `more than 1GB of RAM memory` f
 	
 	sudo apt-get install build-essential libtool autotools-dev autoconf pkg-config libssl-dev -y
 	sudo apt-get install libprotobuf-dev protobuf-compiler -y
-	sudo apt-get install libevent-dev libboost-all-dev -y
+<!--	sudo apt-get install libevent-dev libboost-all-dev -y --!>
 	sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
 		
 	cd MUE/depends/
