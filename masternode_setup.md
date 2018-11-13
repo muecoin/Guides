@@ -244,7 +244,16 @@ write or copy the settings below to your `mue.conf` file:
 	#--------------------
 	masternode=1
 	masternodeprivkey=XXXXXXXXXXXXXXXXXXXXXXX
-	externalip=XXX.XXX.XXX.XXX
+	externalip=XXX.XXX.XXX.XXX:19687
+	#
+	#If needed, uncomment these nodes for connections to the network:
+	#addnode=dns1.monetaryunit.org
+	#addnode=dns2.monetaryunit.org
+	#addnode=dns3.monetaryunit.org
+	#addnode=192.99.217.102
+	#addnode=164.132.151.109
+	
+	
 
 The `rpcuser` and `password` can be anything you like, just put in some long random strings of text.
 The `masternodeprivkey` is the long key we obtained earlier on the Windows wallet after the `masternode genkey` command.
