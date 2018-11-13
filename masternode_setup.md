@@ -203,22 +203,21 @@ If we want to build the daemon instead, we have to setup the building environmen
 Please note that compiling the software requires `more than 1GB of RAM memory` for the VPS. Please setup a `swap file` or use a VPS instance with at least `2GB of RAM memory`.
 
 	sudo add-apt-repository universe
+	sudo add-apt-repository ppa:bitcoin/bitcoin
 	sudo apt-get update -y
-	
+		
 	git clone https://github.com/muecoin/MUE.git
 	
 	sudo apt-get install build-essential libtool autotools-dev autoconf pkg-config libssl-dev -y
 	sudo apt-get install libprotobuf-dev protobuf-compiler -y
-	
-	sudo add-apt-repository ppa:bitcoin/bitcoin
-	sudo apt-get update
-	sudo apt-get install libdb4.8-dev libdb4.8++-dev
+	sudo apt-get install libevent-dev libboost-all-dev -y
+	sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
 		
 	cd MUE/depends/
-	make -j2
+	make -j2 NO_QT=1
 	cd ..
 	./autogen.sh
-	./configure --prefix=/home/<your_user_name>/MUE/depends/x86_64-unknown-linux-gnu --enable-tests=no
+	./configure --prefix=/home/<your_user_name>/MUE/depends/x86_64-unknown-linux-gnu --enable-tests=no --with-gui=no
 	make -j2
 	
 	cd MUE
