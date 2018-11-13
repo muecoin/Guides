@@ -7,6 +7,7 @@
 	Last changes: - New guide overhaul as MUE moves to PoS
 
 ----------------------------------------------------
+Guide Contents:
 1. <a href="#vpsrequirements">VPS Requirements</a>
 
 
@@ -22,7 +23,7 @@ For starters, the reason for running a dedicated VPS instead of hosting one’s 
 
 A typical masternode uses around 500 GB or more of traffic per month. Home internet users with traffic caps will have a hard time running a masternode if the bandwidth is limited. It is especially important to have a high speed connection as the masternode is serving up the blockchain. Additional features to the network will likely require a high speed connection as well.
 
-<a id="vpsrequirements">### VPS requirements for a masternode</a>
+### <a id="vpsrequirements">VPS requirements for a masternode</a>
 The minimal requirements for running a masternode with `prebuilt binaries` are:
 
 	* 1 vCPU core
