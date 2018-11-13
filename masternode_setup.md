@@ -7,6 +7,8 @@
 	Last changes: - New guide overhaul as MUE moves to PoS
 
 ----------------------------------------------------
+1. <a href="#vpsrequirements">VPS Requirements</a>
+
 
 The MUE network has now switched to a PivX/Phore Proof of Stake code base, and as such it inherits the strengths that a 2-tier network brings, in terms of a strong masternode network for additional functions and security of the network. This will enable a lower cost of chain security through staking nodes, and furthermore bring a self funding and community governance to the MUE network.
 
@@ -20,7 +22,7 @@ For starters, the reason for running a dedicated VPS instead of hosting one’s 
 
 A typical masternode uses around 500 GB or more of traffic per month. Home internet users with traffic caps will have a hard time running a masternode if the bandwidth is limited. It is especially important to have a high speed connection as the masternode is serving up the blockchain. Additional features to the network will likely require a high speed connection as well.
 
-### VPS requirements for a masternode
+<a id="vpsrequirements">### VPS requirements for a masternode</a>
 The minimal requirements for running a masternode with `prebuilt binaries` are:
 
 	* 1 vCPU core
