@@ -138,9 +138,9 @@ If you would rather like to build the VPS hot node daemon from source instead, c
 
 <!--- #### Optional server setups
 If you like, the MonetaryUnit team offers guides for running other server distributions:
- * [Building the MUE daemon on a FreeBSD server](https://github.com/muecoin/Guides/blob/master/Build_Freebsd.md) - Build and run the mued (MUE daemon) on a FreeBSD host
+ * [Building the MUE daemon on a FreeBSD server](https://github.com/muecoin/Guides/blob/master/Build_Freebsd.md) - Build and run the monetaryunitd (MUE daemon) on a FreeBSD host
 
- *  [Building the MUE daemon on a CentOS7 server](https://github.com/muecoin/Guides/blob/master/Build_CentOS_7.md) - Build and run the mued (MUE daemon) on a CentOS 7 host
+ *  [Building the MUE daemon on a CentOS7 server](https://github.com/muecoin/Guides/blob/master/Build_CentOS_7.md) - Build and run the monetaryunitd (MUE daemon) on a CentOS 7 host
  
  If you like, install one of the other server distributions and then continue to follow this masternode setup guide.
  Please note, that paths and commands may differ on the server systems above from this guide. Users setting up a masternode on software besides Ubuntu 16.04 is expected to know how to modify the steps to suit their platform.
@@ -201,11 +201,11 @@ Next, download the Linux client, and unpack the compressed files:
 
 We need to copy the binaries to a folder in our path for easier access
 
-	sudo cp mon/mue-cli /usr/local/bin/
-	sudo cp mon/mued /usr/local/bin/
-	sudo cp mon/mue-tx /usr/local/bin/
+	sudo cp mon/monetaryunit-cli /usr/local/bin/
+	sudo cp mon/monetaryunitd /usr/local/bin/
+	sudo cp mon/monetaryunit-tx /usr/local/bin/
 	
-Please note that we do not need to copy the `mue-qt` file, as it is the graphical wallet interface. It will not work on our server.
+Please note that we do not need to copy the `monetaryunit-qt` file, as it is the graphical wallet interface. It will not work on our server.
 	
 -------------------------------------------------------------------
 If we want to build the daemon instead, we have to setup the building environment before compiling the source:
@@ -237,10 +237,10 @@ Open putty again, and connect to your VPS. When prompted log in as user `mue`
 Next step is to setup the configuration files for the MUE daemon (client)
 Use the editor nano to edit the files. More experienced users may use other editors, but nano is an easy to use editor for new beginners and more experienced users alike.
 
-	cd .muecore
-	nano -w mue.conf
+	cd .monetaryunit
+	nano -w monetaryunit.conf
 
-write or copy the settings below to your `mue.conf` file:
+write or copy the settings below to your `monetaryunit.conf` file:
 
 	rpcuser=XXXXXXXXXXXXX
 	rpcpassword=XXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -249,7 +249,7 @@ write or copy the settings below to your `mue.conf` file:
 	listen=1
 	server=1
 	daemon=1
-	maxconnections=50
+	maxconnections=128
 	#--------------------
 	masternode=1
 	masternodeprivkey=XXXXXXXXXXXXXXXXXXXXXXX
@@ -271,11 +271,11 @@ The `externalip` is the `ipnumber` of the `masternode VPS`.
 Save and exit the edited file by pressing `ctrl w` followed by `ctrl x`.
 We will secure the configuration file by changing its permissions:
 
-	chmod 600 /home/mue/.muecore/mue.conf
+	chmod 600 /home/mue/.monetaryunit/monetaryunit.conf
 
 # Start the mue daemon
 
-	mued -daemon
+	monetaryunitd -daemon
 
 The MUE client will start downloading the blockchain, and synchronize to the network. Give it time to sync up, and in the meantime we will continue with more configuration on the cold node (Windows). The `masternode.conf` on the Windows host must be made with the correct data for controlling the masternode hot node.
 
@@ -304,15 +304,17 @@ the output will look something like this:
 
 which are the two values that we are looking for. The `collateral_output_index` will be either a `0` or a `1`.
 
+Alternaly, check your transaction history in the wallet: double click on the collateral transaction `Payment to yourself` and the transaction can be found in hte transaction dialog. Compare this with the outputs from `masternode outputs`, this is helpful if the user has multiple collateral transactions and can use this to find the specific transaction details.
+
 Put these values in the `masternode.conf` all on one single line, save the file and restart the wallet.
 
-	MN1 123.45.56.78:19683 5EmzAjbC7HBqTF6VSGysNCgZaBfRRAXMEHmFAzuw5Ywnccb9Bkj f9a2013b00205098ad8b192d9ac68e7d55e47eb80c860972a404a51bfbc100ac 1
+	MN1 123.45.56.78:19687 5EmzAjbC7HBqTF6VSGysNCgZaBfRRAXMEHmFAzuw5Ywnccb9Bkj f9a2013b00205098ad8b192d9ac68e7d55e47eb80c860972a404a51bfbc100ac 1
 
 When the cold wallet starts up again, check the masternode tab, and the masternode should be visible in the list of your own masternodes.
 
 ## Final last commands on the VPS again, and let's check the status of the masternode.
 
-	mue-cli mnsync status
+	monetaryunit-cli mnsync status
 
 We need the masternode hot wallet to be synced and up to date before proceeding.
 It will be ready when the output looks like this:
@@ -328,7 +330,7 @@ It will be ready when the output looks like this:
 	"IsFailed": false
 	}
 
-If the output is different, please wait for the node to finish syncing, and try the command `mue-cli mnsync status` again. When the hot node is all synced and ready, the node is communicating to the MonetaryUnit network and waiting for further instructions. The masternode is not yet accepted by the other masternodes, we must start it first.
+If the output is different, please wait for the node to finish syncing, and try the command `monetaryunit-cli mnsync status` again. When the hot node is all synced and ready, the node is communicating to the MonetaryUnit network and waiting for further instructions. The masternode is not yet accepted by the other masternodes, we must start it first.
 
 We need to activate the masternode, so we move back to the cold wallet on Windows.
 Check the masternode tab of the wallet.
@@ -346,7 +348,7 @@ We can see the output change in the masternode status fields to `Pre-Enabled` an
 
 Verify the status on your hot node with the command:
 
-	mue-cli masternode debug
+	monetaryunit-cli masternode debug
 	Masternode successfully started
 
 Well done!
