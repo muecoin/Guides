@@ -11,7 +11,9 @@ Guide Contents:
 1. <a href="#vps-requirements-for-a-masternode">VPS Requirements</a>
 2. <a href="#while-waiting-lets-start-working-on-the-vps-virtual-private-server-hot-node">Cold node setup and configuration</a>
 3. <a href="#while-waiting-lets-start-working-on-the-vps-virtual-private-server-hot-node">Hot node setup (VPS)</a>
-4. 
+4. <a href="#start-the-mue-daemon">Starting up MUE daemon on the VPS</a>
+5. <a href="#final-last-commands-on-the-vps-again-and-lets-check-the-status-of-the-masternode">Launching your masternode</a>
+6. <a href="#additional-help-guides">Additional help guides</a>
 
 The MUE network has now switched to a PivX/Phore Proof of Stake code base, and as such it inherits the strengths that a 2-tier network brings, in terms of a strong masternode network for additional functions and security of the network. This will enable a lower cost of chain security through staking nodes, and furthermore bring a self funding and community governance to the MUE network.
 
