@@ -4,7 +4,8 @@
 	Version 2.0.2 - 2018-11-14
 	Version 1.0.3 - 2017-10-03
 
-	Last changes: - New guide overhaul as MUE moves to PoS. Text is updated to install the VPS, images not yet updated.
+	Last changes: - New guide overhaul as MUE moves to PoS. 
+			Text is updated to install the VPS, images not yet updated.
 
 ----------------------------------------------------
 Guide Contents:
