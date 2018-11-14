@@ -135,16 +135,16 @@ If you would rather like to build the VPS hot node daemon from source instead, c
 
 -----------------------------------------------------------
 
-#### Optional server setups
-If you like, the MonetaryUnit team offers guides for running other server distributions:
-* [Building the MUE daemon on a FreeBSD server](https://github.com/muecoin/Guides/blob/master/Build_Freebsd.md) - Build and run the mued (MUE daemon) on a FreeBSD host
-
-*  [Building the MUE daemon on a CentOS7 server](https://github.com/muecoin/Guides/blob/master/Build_CentOS_7.md) - Build and run the mued (MUE daemon) on a CentOS 7 host
-
-If you like, install one of the other server distributions and then continue to follow this masternode setup guide.
-Please note, that paths and commands may differ on the server systems above from this guide. Users setting up a masternode on software besides Ubuntu 16.04 is expected to know how to modify the steps to suit their platform.
-
------------------------------------------------------------
+// #### Optional server setups
+// If you like, the MonetaryUnit team offers guides for running other server distributions:
+// * [Building the MUE daemon on a FreeBSD server](https://github.com/muecoin/Guides/blob/master/Build_Freebsd.md) - Build and run the mued (MUE daemon) on a FreeBSD host
+//
+// *  [Building the MUE daemon on a CentOS7 server](https://github.com/muecoin/Guides/blob/master/Build_CentOS_7.md) - Build // and run the mued (MUE daemon) on a CentOS 7 host
+// 
+// If you like, install one of the other server distributions and then continue to follow this masternode setup guide.
+// Please note, that paths and commands may differ on the server systems above from this guide. Users setting up a masternode on software besides Ubuntu 16.04 is expected to know how to modify the steps to suit their platform.
+//
+//-----------------------------------------------------------
 
 <a href="Images/17-ubuntu-1604-10usd-droplet.PNG"><img src="Images/17-ubuntu-1604-10usd-droplet.PNG" width="400" ></a>
 
