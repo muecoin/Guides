@@ -9,7 +9,7 @@
 ----------------------------------------------------
 Guide Contents:
 1. <a href="#vps-requirements-for-a-masternode">VPS Requirements</a>
-2. <a href="#while-waiting-lets-start-working-on-the-vps-virtual-private-server-hot-node">Cold node setup and configuration</a>
+2. <a href="#setting-up-a-local-wallet-for-cold-storage-and-a-hot-wallet-masternode-on-a-vps">Cold node setup and configuration</a>
 3. <a href="#while-waiting-lets-start-working-on-the-vps-virtual-private-server-hot-node">Hot node setup (VPS)</a>
 4. <a href="#start-the-mue-daemon">Starting up MUE daemon on the VPS</a>
 5. <a href="#final-last-commands-on-the-vps-again-and-lets-check-the-status-of-the-masternode">Launching your masternode</a>
