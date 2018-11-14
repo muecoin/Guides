@@ -1,10 +1,10 @@
 # MonetaryUnit Masternode Setup
 
 	A MUE guide for setting up and hosting a masternode on a VPS (virtual private server)
-	Version 2.0.0 - 2018-10-10
+	Version 2.0.2 - 2018-11-14
 	Version 1.0.3 - 2017-10-03
 
-	Last changes: - New guide overhaul as MUE moves to PoS
+	Last changes: - New guide overhaul as MUE moves to PoS. Text is updated to install the VPS, images not yet updated.
 
 ----------------------------------------------------
 Guide Contents:
