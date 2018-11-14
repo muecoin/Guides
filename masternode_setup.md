@@ -9,7 +9,7 @@
 ----------------------------------------------------
 Guide Contents:
 1. <a href="#vps-requirements-for-a-masternode">VPS Requirements</a>
-2. <a href=#while-waiting-lets-start-working-on-the-vps-virtual-private-server-hot-node">Cold node setup and configuration</a>
+2. <a href="#while-waiting-lets-start-working-on-the-vps-virtual-private-server-hot-node">Cold node setup and configuration</a>
 3. <a href="#while-waiting-lets-start-working-on-the-vps-virtual-private-server-hot-node">Hot node setup (VPS)</a>
 4. 
 
