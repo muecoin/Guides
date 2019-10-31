@@ -24,7 +24,7 @@ Open up the terminal and follow the commands below. This sets up the building en
 
 ### Configure and compile the MUE wallet
 
-    cd MUECore/
+    cd MUE/
     ./autogen.sh && ./configure --with-incompatible-bdb --without-miniupnpc && make -j8 && sudo make install
 
 The value -j8 tells the compiler to use 8 threads for the compiling. If your processor has fewer or more cores, set the value to speed up the compiling, one thread per processor core, eg -j2, -j4, -j16.
